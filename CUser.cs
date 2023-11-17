@@ -6,10 +6,28 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    //public class CUser
+    //{
+    //    public string Username { get; set; }
+    //    public string Password { get; set; }
+    //    public string Email { get; set; }
+    //}
+    [Serializable]
     public class CUser
     {
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+
+        public CUser(string username, string password, string email)
+        {
+            Username = username;
+            Password = password;
+            Email = email;
+        }
+
+        public CUser()
+        {
+        }
     }
 }

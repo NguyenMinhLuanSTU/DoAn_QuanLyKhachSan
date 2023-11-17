@@ -56,24 +56,15 @@ namespace WindowsFormsApp1
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            CUser newUser = new CUser();
-            newUser.Username = txtUsername.Text;
-            newUser.Email = txtEmail.Text;
-            newUser.Password = txtPassword.Text;
-            var users = UserData.getAllUser();
-            
-            if (users.Find(u => string.Compare(u.Username,newUser.Username) == 0) == null)
+            CUser newUser = new CUser(txtUsername.Text, txtPassword.Text, txtEmail.Text);
+            if (UserData.Find(txtUsername.Text,ref newUser) == false)
             {
-                users.Add(newUser);
+                UserData.Add(newUser);
+                UserData.SaveUserData();
                 Login lg = new Login();
                 lg.Show();
-                this.Hide();
+                this.Close();
             }
          }
-
-        private void Register_FormClosing(object sender, FormClosingEventArgs e)
-        {
-          
-        }
     }
 }

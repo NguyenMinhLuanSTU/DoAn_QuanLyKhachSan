@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
+            guna2DragControl1.SetDrag(pnlMainLeft);
+            guna2DragControl1.SetDrag(picbwelcom);
         }
 
         private void InitializeComponent()
@@ -43,6 +46,7 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picbwelcom = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlMainLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
@@ -80,6 +84,7 @@ namespace WindowsFormsApp1
             this.pnlMainLeft.Name = "pnlMainLeft";
             this.pnlMainLeft.Size = new System.Drawing.Size(398, 500);
             this.pnlMainLeft.TabIndex = 1;
+            this.pnlMainLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainLeft_Paint);
             // 
             // guna2PictureBox3
             // 
@@ -298,6 +303,7 @@ namespace WindowsFormsApp1
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(298, 37);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // pnlMainRight
             // 
@@ -359,6 +365,11 @@ namespace WindowsFormsApp1
             this.picbwelcom.TabIndex = 0;
             this.picbwelcom.TabStop = false;
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // Login
             // 
             this.ClientSize = new System.Drawing.Size(845, 500);
@@ -368,6 +379,7 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.pnlMainLeft.ResumeLayout(false);
             this.pnlMainLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -421,10 +433,9 @@ namespace WindowsFormsApp1
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
-        {
-            var users = UserData.getAllUser();
-            var user = users.Find(u => string.Compare(u.Username, txtUsername.Text) == 0);
-            if (user != null)
+        { 
+            CUser user = new CUser();
+            if (UserData.Find(txtUsername.Text,ref user) == true)
             {
                 int result = string.Compare(user.Password, txtPassword.Text);
                 if (result == 0)
@@ -432,6 +443,7 @@ namespace WindowsFormsApp1
                     HomeWindow mainWindow = new HomeWindow(txtUsername.Text);
                     mainWindow.Show();
                     this.Hide();
+                    UserData.SaveUserData();
                 }
                 else
                 {
@@ -440,8 +452,23 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Username not found!","Exit",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Username not found!","Login",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
+        }
+
+        private void pnlMainLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            UserData.ReadUserData();
         }
     }
 }

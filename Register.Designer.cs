@@ -53,6 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picbwelcom = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlMainLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
@@ -143,9 +145,9 @@
             this.lbSignin.ForeColor = System.Drawing.Color.BlueViolet;
             this.lbSignin.Location = new System.Drawing.Point(239, 438);
             this.lbSignin.Name = "lbSignin";
-            this.lbSignin.Size = new System.Drawing.Size(43, 14);
+            this.lbSignin.Size = new System.Drawing.Size(39, 14);
             this.lbSignin.TabIndex = 14;
-            this.lbSignin.Text = "Sign up";
+            this.lbSignin.Text = "Sign in";
             this.lbSignin.Click += new System.EventHandler(this.lbSignin_Click);
             // 
             // btnCreate
@@ -398,6 +400,16 @@
             this.picbwelcom.TabIndex = 0;
             this.picbwelcom.TabStop = false;
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2DragControl2
+            // 
+            this.guna2DragControl2.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl2.UseTransparentDrag = true;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,7 +421,7 @@
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);
+           
             this.pnlMainLeft.ResumeLayout(false);
             this.pnlMainLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -451,5 +463,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox picbwelcom;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
     }
 }

@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             displayName = name;
+            guna2DragControl1.SetDrag(guna2Panel1);
+           
         }
 
         private void picbClose_Click(object sender, EventArgs e)
@@ -40,7 +42,9 @@ namespace WindowsFormsApp1
 
         private void guna2PictureBox7_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
         }
     }
 }
