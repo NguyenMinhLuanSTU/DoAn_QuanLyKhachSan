@@ -11,7 +11,9 @@ namespace WindowsFormsApp1
     internal class UserData
     {
         private static List<CUser> users;
-        private static string filePath = @"D:\DA Tinhoc_1\Data\users.json";
+        private static string filePath = @"D:\studyNam\projs\DoAn\QuanLiKS\Data\users.json";
+        private static string t1 = AppDomain.CurrentDomain.BaseDirectory;
+        private static string t2 = Path.Combine(t1, filePath);
         public static List<CUser> getAllUser()
         {
             return users;
@@ -43,7 +45,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(users));
+                File.WriteAllText(t2, JsonConvert.SerializeObject(users));
                 return true;
             }
             catch
@@ -55,9 +57,9 @@ namespace WindowsFormsApp1
         {
             try
             {
-                if (File.Exists(filePath))
+                if (File.Exists(t2))
                 {
-                    string jsonContent = File.ReadAllText(filePath);
+                    string jsonContent = File.ReadAllText(t2);
                     users = JsonConvert.DeserializeObject<List<CUser>>(jsonContent);
                     if (users == null)
                         users = new List<CUser>();
