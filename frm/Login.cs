@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
+            guna2DragControl1.SetDrag(pnlMainLeft);
+            guna2DragControl1.SetDrag(picbwelcom);
         }
 
         private void InitializeComponent()
@@ -43,6 +46,7 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picbwelcom = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlMainLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
@@ -80,6 +84,7 @@ namespace WindowsFormsApp1
             this.pnlMainLeft.Name = "pnlMainLeft";
             this.pnlMainLeft.Size = new System.Drawing.Size(398, 500);
             this.pnlMainLeft.TabIndex = 1;
+            this.pnlMainLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMainLeft_Paint);
             // 
             // guna2PictureBox3
             // 
@@ -131,7 +136,7 @@ namespace WindowsFormsApp1
             this.label4.ForeColor = System.Drawing.Color.BlueViolet;
             this.label4.Location = new System.Drawing.Point(238, 431);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 14);
+            this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "Create";
             this.label4.Click += new System.EventHandler(this.label1_Click);
@@ -174,7 +179,7 @@ namespace WindowsFormsApp1
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Location = new System.Drawing.Point(40, 276);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
             this.checkBox1.TabIndex = 12;
             this.checkBox1.UseVisualStyleBackColor = false;
             // 
@@ -184,7 +189,7 @@ namespace WindowsFormsApp1
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(136, 116);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(126, 17);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(151, 19);
             this.guna2HtmlLabel4.TabIndex = 11;
             this.guna2HtmlLabel4.Text = "Sign in to your account";
             // 
@@ -195,7 +200,7 @@ namespace WindowsFormsApp1
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(158, 75);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(86, 35);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(105, 44);
             this.guna2HtmlLabel2.TabIndex = 7;
             this.guna2HtmlLabel2.Text = "Hello!";
             this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -207,7 +212,7 @@ namespace WindowsFormsApp1
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(121, 430);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(117, 16);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(153, 18);
             this.guna2HtmlLabel5.TabIndex = 3;
             this.guna2HtmlLabel5.Text = "Don\'t have an account?";
             this.guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -219,7 +224,7 @@ namespace WindowsFormsApp1
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gray;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(65, 275);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(71, 16);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(95, 18);
             this.guna2HtmlLabel1.TabIndex = 5;
             this.guna2HtmlLabel1.Text = "Remember me";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
@@ -287,7 +292,7 @@ namespace WindowsFormsApp1
             this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Location = new System.Drawing.Point(62, 165);
@@ -298,6 +303,7 @@ namespace WindowsFormsApp1
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(298, 37);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // pnlMainRight
             // 
@@ -317,7 +323,7 @@ namespace WindowsFormsApp1
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(390, 33);
+            this.label3.Size = new System.Drawing.Size(497, 43);
             this.label3.TabIndex = 3;
             this.label3.Text = "Hotel Management System";
             // 
@@ -328,7 +334,7 @@ namespace WindowsFormsApp1
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(109, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 33);
+            this.label2.Size = new System.Drawing.Size(295, 43);
             this.label2.TabIndex = 2;
             this.label2.Text = "Welcome to the\r\n";
             // 
@@ -359,6 +365,11 @@ namespace WindowsFormsApp1
             this.picbwelcom.TabIndex = 0;
             this.picbwelcom.TabStop = false;
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // Login
             // 
             this.ClientSize = new System.Drawing.Size(845, 500);
@@ -368,6 +379,7 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.pnlMainLeft.ResumeLayout(false);
             this.pnlMainLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -421,10 +433,9 @@ namespace WindowsFormsApp1
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
-        {
-            var users = UserData.getAllUser();
-            var user = users.Find(u => string.Compare(u.Username, txtUsername.Text) == 0);
-            if (user != null)
+        { 
+            CUser user = new CUser();
+            if (CUserData.Find(txtUsername.Text,ref user) == true)
             {
                 int result = string.Compare(user.Password, txtPassword.Text);
                 if (result == 0)
@@ -432,16 +443,32 @@ namespace WindowsFormsApp1
                     HomeWindow mainWindow = new HomeWindow(txtUsername.Text);
                     mainWindow.Show();
                     this.Hide();
+                    CUserData.SaveUserData();
                 }
                 else
                 {
-                    MessageBox.Show("Password incorect");
+                    MessageBox.Show("Password incorect!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Username not found!","Exit",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Username not found!","Login",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
+        }
+
+        private void pnlMainLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            CUserData.ReadUserData();
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

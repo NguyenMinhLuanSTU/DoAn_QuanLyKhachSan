@@ -53,6 +53,9 @@
             this.btnRoommanagerment = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.uc_AddRoom = new WindowsFormsApp1.User_Control.UC_AddRoom();
+            this.uc_BookRoom = new WindowsFormsApp1.User_Control.Uc_BookRoom();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
@@ -373,7 +376,7 @@
             this.btnBookingandpayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnBookingandpayment.Name = "btnBookingandpayment";
             this.btnBookingandpayment.PressedColor = System.Drawing.Color.Transparent;
-            this.btnBookingandpayment.Size = new System.Drawing.Size(304, 53);
+            this.btnBookingandpayment.Size = new System.Drawing.Size(197, 53);
             this.btnBookingandpayment.TabIndex = 7;
             this.btnBookingandpayment.Text = "BOOKING AND PAYMENT";
             // 
@@ -399,6 +402,7 @@
             this.btnCustomer.Size = new System.Drawing.Size(167, 42);
             this.btnCustomer.TabIndex = 6;
             this.btnCustomer.Text = "CUSTOMER";
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnRoommanagerment
             // 
@@ -422,6 +426,7 @@
             this.btnRoommanagerment.Size = new System.Drawing.Size(285, 42);
             this.btnRoommanagerment.TabIndex = 5;
             this.btnRoommanagerment.Text = "ROOM MANAGERMENT";
+            this.btnRoommanagerment.Click += new System.EventHandler(this.btnRoommanagerment_Click);
             // 
             // guna2Button4
             // 
@@ -469,11 +474,37 @@
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "HOME";
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // uc_AddRoom
+            // 
+            this.uc_AddRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uc_AddRoom.Location = new System.Drawing.Point(389, 0);
+            this.uc_AddRoom.Name = "uc_AddRoom";
+            this.uc_AddRoom.Size = new System.Drawing.Size(1079, 800);
+            this.uc_AddRoom.TabIndex = 3;
+            this.uc_AddRoom.Visible = false;
+            // 
+            // uc_BookRoom
+            // 
+            this.uc_BookRoom.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uc_BookRoom.CausesValidation = false;
+            this.uc_BookRoom.Location = new System.Drawing.Point(389, 0);
+            this.uc_BookRoom.Name = "uc_BookRoom";
+            this.uc_BookRoom.Size = new System.Drawing.Size(1079, 800);
+            this.uc_BookRoom.TabIndex = 2;
+            this.uc_BookRoom.Visible = false;
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 800);
+            this.Controls.Add(this.uc_AddRoom);
+            this.Controls.Add(this.uc_BookRoom);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -524,5 +555,8 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
         private Guna.UI2.WinForms.Guna2PictureBox picbClose;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDisplayName;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private User_Control.Uc_BookRoom uc_BookRoom;
+        private User_Control.UC_AddRoom uc_AddRoom;
     }
 }

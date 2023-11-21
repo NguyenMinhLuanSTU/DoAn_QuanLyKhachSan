@@ -67,6 +67,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private Guna.UI2.WinForms.Guna2PictureBox picbwelcom;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }
 

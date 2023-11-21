@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.User_Control;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,13 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             displayName = name;
+            guna2DragControl1.SetDrag(guna2Panel1);
+           
+        }
+        private void hideAllUC()
+        {
+            uc_AddRoom.Visible = false;
+            uc_BookRoom.Visible = false;
         }
 
         private void picbClose_Click(object sender, EventArgs e)
@@ -40,7 +48,28 @@ namespace WindowsFormsApp1
 
         private void guna2PictureBox7_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
+        }
+
+        private void btnBookingandpayment_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            hideAllUC();
+            uc_BookRoom.Visible = true;
+        }
+
+        private void btnRoommanagerment_Click(object sender, EventArgs e)
+        {
+            hideAllUC();
+            uc_AddRoom.Visible = true;
+
         }
     }
 }
