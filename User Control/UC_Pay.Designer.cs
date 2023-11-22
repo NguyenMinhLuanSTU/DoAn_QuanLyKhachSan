@@ -69,6 +69,7 @@
             this.btnPay.Size = new System.Drawing.Size(179, 58);
             this.btnPay.TabIndex = 87;
             this.btnPay.Text = "Thanh Toán";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // label8
             // 

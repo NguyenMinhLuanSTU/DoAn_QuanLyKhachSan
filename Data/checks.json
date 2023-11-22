@@ -1,13 +1,19 @@
 {
-  "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5"
+  "costomer": {
+    "CostomerName": "a",
+    "PhoneNumber": "a",
+    "Nationality": "a",
+    "DateOfBirth": "2023-11-14T20:52:10.605",
+    "Address": "a",
+    "CCCD": "a"
   },
-  "exclude": [
-    "node_modules",
-    "wwwroot"
-  ]
+  "room": {
+    "IDRoom": "d",
+    "RCLASS": "VIP",
+    "BTYPE": "Single",
+    "Price": "5",
+    "Hired": false
+  },
+  "CheckIn": "2023-11-22T20:52:10",
+  "CheckOut":"0001-01-01T00:00:00"
 }

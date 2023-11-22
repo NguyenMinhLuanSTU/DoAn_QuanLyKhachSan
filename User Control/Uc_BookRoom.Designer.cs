@@ -81,6 +81,7 @@
             this.btnCheckIn.Size = new System.Drawing.Size(258, 58);
             this.btnCheckIn.TabIndex = 101;
             this.btnCheckIn.Text = "Check In";
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // txtPrice
             // 
@@ -175,8 +176,9 @@
             this.cbbRCLASS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbRCLASS.ItemHeight = 30;
             this.cbbRCLASS.Items.AddRange(new object[] {
-            "Vip",
-            "Normal"});
+            "VIP",
+            "Business Class",
+            "Economy Class"});
             this.cbbRCLASS.Location = new System.Drawing.Point(763, 203);
             this.cbbRCLASS.Name = "cbbRCLASS";
             this.cbbRCLASS.Size = new System.Drawing.Size(259, 36);
@@ -222,7 +224,7 @@
             // 
             this.dtpCheckIn.Checked = true;
             this.dtpCheckIn.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.dtpCheckIn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCheckIn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.dtpCheckIn.ForeColor = System.Drawing.Color.White;
             this.dtpCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCheckIn.Location = new System.Drawing.Point(405, 451);
@@ -446,6 +448,11 @@
             this.cbbIDRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbIDRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbIDRoom.ItemHeight = 30;
+            this.cbbIDRoom.Items.AddRange(new object[] {
+            "a",
+            "b",
+            "c",
+            "d"});
             this.cbbIDRoom.Location = new System.Drawing.Point(764, 451);
             this.cbbIDRoom.Name = "cbbIDRoom";
             this.cbbIDRoom.Size = new System.Drawing.Size(259, 36);

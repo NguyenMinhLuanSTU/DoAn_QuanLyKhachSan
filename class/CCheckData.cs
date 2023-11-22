@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     internal class CCheckData
     {
-        static string filePath = @"D:\studyNam\projs\DoAn\QuanLiKS\Data\checks.json";
+        static string filePath = @"D:\studyNam\projs\DoAn\QLKS\Data\checks.json";
 
         public static List<CCheck> checks;
         public static List<CCheck> getAllCheck()

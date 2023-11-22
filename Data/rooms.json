@@ -1,9 +1,30 @@
 [
   {
-    "IDRoom": "a",
-    "Price": "a",
-    "RCLASS": "123",
-    "BTYPE": "123",
+    "IDRoom": "A4",
+    "RCLASS": "Business Class",
+    "BTYPE": "Double",
+    "Price": "3",
+    "Hired": false
+  },
+  {
+    "IDRoom": "b",
+    "RCLASS": "Business Class",
+    "BTYPE": "Double",
+    "Price": "3",
+    "Hired": false
+  },
+  {
+    "IDRoom": "c",
+    "RCLASS": "Business Class",
+    "BTYPE": "Double",
+    "Price": "3",
+    "Hired": false
+  },
+  {
+    "IDRoom": "d",
+    "RCLASS": "VIP",
+    "BTYPE": "Single",
+    "Price": "5",
     "Hired": false
   }
 ]

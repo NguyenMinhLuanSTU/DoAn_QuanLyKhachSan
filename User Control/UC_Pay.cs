@@ -16,5 +16,10 @@ namespace WindowsFormsApp1.User_Control
         {
             InitializeComponent();
         }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

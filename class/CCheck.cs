@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         }
         public int checkPay()
         {
-            pay = (int)(CheckOut.Day - CheckIn.Day) * room.getPrice();
+            pay = (int)(CheckOut.Day - CheckIn.Day) * int.Parse(room.getPrice());
             return pay;
         }
     }

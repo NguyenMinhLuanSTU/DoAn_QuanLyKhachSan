@@ -10,34 +10,23 @@ namespace WindowsFormsApp1
     {
         public string IDRoom { get; set; }
 
-        private int Price;
         public string RCLASS { get; set; }
         public string BTYPE { get; set; }
+        public string Price { get; set; }
         public bool Hired { get; set; }
-        //public enum  RCLASS
-        //{
-        //    VIP,
-        //    Class1,
-        //    Class2
-        //}
-        //public enum BTYPE
-        //{
-        //    SIGLE,
-        //    DOUBLE,
-        //    TRIPLE
-        //}
+        
         public CRoom() { }
-        public CRoom(string IDRoom, int Price, string RCLASS, string BTYPE, bool Hired)
+        public CRoom(string IDRoom,  string RCLASS, string BTYPE,string Price, bool Hired)
         {
             this.IDRoom = IDRoom;
-            this.Price = Price;
             this.RCLASS = RCLASS;
             this.BTYPE = BTYPE;
+            this.Price = Price;
             this.Hired = Hired;
         }
-        public int getPrice()
+        public string getPrice()
         {
-            return this.Price;
+            return Price;
         }
     }
 }

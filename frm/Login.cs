@@ -443,7 +443,7 @@ namespace WindowsFormsApp1
                     HomeWindow mainWindow = new HomeWindow(txtUsername.Text);
                     mainWindow.Show();
                     this.Hide();
-                    CUserData.SaveUserData();
+                    //CUserData.SaveUserData();
                 }
                 else
                 {

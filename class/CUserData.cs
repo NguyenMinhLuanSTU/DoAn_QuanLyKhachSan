@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     internal class CUserData
     {
-        private static string filePath = @"D:\studyNam\projs\DoAn\QuanLiKS\Data\users.json";
+        private static string filePath = @"D:\studyNam\projs\DoAn\QLKS\Data\users.json";
 
         private static List<CUser> users;
         public static List<CUser> getAllUser()

@@ -23,8 +23,9 @@ namespace WindowsFormsApp1
         }
         private void hideAllUC()
         {
-            uc_AddRoom.Visible = false;
+            uC_AddRoom.Visible = false;
             uc_BookRoom.Visible = false;
+            uC_Pay.Visible = false;
         }
 
         private void picbClose_Click(object sender, EventArgs e)
@@ -67,9 +68,16 @@ namespace WindowsFormsApp1
 
         private void btnRoommanagerment_Click(object sender, EventArgs e)
         {
-            hideAllUC();
-            uc_AddRoom.Visible = true;
 
+            hideAllUC();
+            uC_AddRoom.Visible = true;
+
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            hideAllUC();
+            uC_Pay.Visible = true;
         }
     }
 }

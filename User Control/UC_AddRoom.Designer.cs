@@ -98,9 +98,9 @@
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(700, 495);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 23);
+            this.label12.Size = new System.Drawing.Size(247, 23);
             this.label12.TabIndex = 108;
-            this.label12.Text = "Giá Tiền:";
+            this.label12.Text = "Giá Tiền:     (trVND / Ngày)";
             // 
             // label11
             // 

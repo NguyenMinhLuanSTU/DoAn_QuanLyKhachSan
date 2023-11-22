@@ -1,13 +1,1 @@
-{
-  "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5"
-  },
-  "exclude": [
-    "node_modules",
-    "wwwroot"
-  ]
-}
+[{"CostomerName":"a","PhoneNumber":"a","Nationality":"a","DateOfBirth":"2023-11-14T20:52:10.605","Address":"a","CCCD":"a"}]
