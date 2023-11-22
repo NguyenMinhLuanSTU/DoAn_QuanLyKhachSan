@@ -87,11 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class\CCheck.cs" />
-    <Compile Include="class\CCheckData.cs" />
     <Compile Include="class\CCostomer.cs" />
-    <Compile Include="class\CCostomerData.cs" />
     <Compile Include="class\CRoom.cs" />
-    <Compile Include="class\CRoomData.cs" />
     <Compile Include="class\CUser.cs" />
     <Compile Include="frm\HomeWindow.cs">
       <SubType>Form</SubType>

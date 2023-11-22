@@ -1,1 +1,26 @@
-[{"CostomerName":"a","PhoneNumber":"a","Nationality":"a","DateOfBirth":"2023-11-14T20:52:10.605","Address":"a","CCCD":"a"}]
+[
+  {
+    "CostomerName": "a",
+    "PhoneNumber": "a",
+    "Nationality": "a",
+    "DateOfBirth": "2023-11-14T20:52:10.605",
+    "Address": "a",
+    "CCCD": "a"
+  },
+  {
+    "CostomerName": "nam",
+    "PhoneNumber": "033",
+    "Nationality": "VN",
+    "DateOfBirth": "2023-11-14T20:52:10.605",
+    "Address": "HCM",
+    "CCCD": "089"
+  },
+  {
+    "CostomerName": "Nam",
+    "PhoneNumber": "098",
+    "Nationality": "VN",
+    "DateOfBirth": "2023-11-14T20:52:10.605",
+    "Address": "HCM",
+    "CCCD": "000"
+  }
+]

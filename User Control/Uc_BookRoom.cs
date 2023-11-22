@@ -108,13 +108,13 @@ namespace WindowsFormsApp1.User_Control
 
                 //Làm việc với check
                 //Đọc check json
-                string jsonChk = File.ReadAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\checks.json");
-                checks = JsonConvert.DeserializeObject<List<CCheck>>(jsonChk);
-                //add dữ liệu hiện có vào class
-                CCheck check = new CCheck(dtpCheckIn.Value,costomer,room);
-                // ghi nội dung vào json
-                jsonChk = JsonConvert.SerializeObject(check);
-                File.WriteAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\checks.json", jsonChk);
+                //string jsonChk = File.ReadAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\checks.json");
+                //checks = JsonConvert.DeserializeObject<List<CCheck>>(jsonChk);
+                ////add dữ liệu hiện có vào class
+                //CCheck check = new CCheck(dtpCheckIn.Value,costomer,room);
+                //// ghi nội dung vào json
+                //jsonChk = JsonConvert.SerializeObject(check);
+                //File.WriteAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\checks.json", jsonChk);
 
             }
             else
