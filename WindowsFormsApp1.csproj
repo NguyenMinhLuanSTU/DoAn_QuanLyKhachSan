@@ -36,8 +36,8 @@
     <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -129,6 +129,12 @@
     <Compile Include="User Control\UC_CustomerDetail.Designer.cs">
       <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\UC_Pay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_CustomerDetail.resx">
       <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Pay.resx">
       <DependentUpon>UC_Pay.cs</DependentUpon>
@@ -234,6 +243,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\I.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0in3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0in31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0in3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1in3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2in3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3in3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

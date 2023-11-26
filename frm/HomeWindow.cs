@@ -79,5 +79,10 @@ namespace WindowsFormsApp1
             hideAllUC();
             uC_Pay.Visible = true;
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

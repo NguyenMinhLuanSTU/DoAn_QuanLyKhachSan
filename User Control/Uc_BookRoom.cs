@@ -64,7 +64,7 @@ namespace WindowsFormsApp1.User_Control
                 // làm việc với room
                 CRoom room = new CRoom();
                 //Đọc rooms.json
-                string jsonrm = File.ReadAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\rooms.json");
+                string jsonrm = File.ReadAllText(@"D:\Test@ABCD\Data\rooms.json");
                 rooms = JsonConvert.DeserializeObject<List<CRoom>>(jsonrm);
                 //tìm kiếm phòng
                 foreach (CRoom r in rooms)
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1.User_Control
 
                 // Làm việc với costomer
                 //Đọc costomer json
-                string jsonCtm = File.ReadAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\costomers.json");
+                string jsonCtm = File.ReadAllText(@"D:\Test@ABCD\Data\costomers.json");
                 costomers = JsonConvert.DeserializeObject<List<CCostomer>>(jsonCtm);
                 //add dữ liệu hiện có vào class
                 CCostomer costomer = new CCostomer(txtName.Text, txtPhone.Text, txtNationality.Text, dtpBirth.Value, txtAddress.Text, txtCCCD.Text);
@@ -103,7 +103,7 @@ namespace WindowsFormsApp1.User_Control
                 costomers.Add(costomer);
                 // ghi nội dung vào json
                 jsonCtm = JsonConvert.SerializeObject(costomers);
-                File.WriteAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\costomers.json", jsonCtm);
+                File.WriteAllText(@"D:\Test@ABCD\Data\costomers.json", jsonCtm);
 
 
                 //Làm việc với check
@@ -121,6 +121,11 @@ namespace WindowsFormsApp1.User_Control
             {
                 MessageBox.Show("Vui lòng không để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

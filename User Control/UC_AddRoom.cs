@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.User_Control
             InitializeComponent();
 
             //list = new List<int>();
-            using (StreamReader reader = new StreamReader(@"D:\studyNam\projs\DoAn\QLKS\Data\rooms.json"))
+            using (StreamReader reader = new StreamReader(@"D:\Test@ABCD\Data\rooms.json"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1.User_Control
         protected override void OnPaint(PaintEventArgs e)
         {
             //đưa data trong file json vào dgv
-            dgvAddRoom.DataSource = JsonConvert.DeserializeObject<List<CRoom>>(File.ReadAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\rooms.json"));
+            dgvAddRoom.DataSource = JsonConvert.DeserializeObject<List<CRoom>>(File.ReadAllText(@"D:\Test@ABCD\Data\rooms.json"));
 
             //luôn cập nhật giá trị cho price
             double money = 1.0;
@@ -53,7 +53,7 @@ namespace WindowsFormsApp1.User_Control
             if (cbbRCLASS.Text != "" && cbbBTYPE.Text != "" && txtIDRoom.Text != "" && txtPrice.Text != "")
             {
                 //Đọc json
-                string json = File.ReadAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\rooms.json");
+                string json = File.ReadAllText(@"D:\Test@ABCD\Data\rooms.json");
                 rooms = JsonConvert.DeserializeObject<List<CRoom>>(json);
 
                 //add dữ liệu hiện có vào class
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1.User_Control
 
                 // ghi nội dung vào json
                 json = JsonConvert.SerializeObject(rooms);
-                File.WriteAllText(@"D:\studyNam\projs\DoAn\QLKS\Data\rooms.json", json);
+                File.WriteAllText(@"D:\Test@ABCD\Data\rooms.json", json);
 
                 //Đưa dữ liệu ra DataGridView
                 dgvAddRoom.DataSource = rooms;
@@ -94,7 +94,7 @@ namespace WindowsFormsApp1.User_Control
         {
             int row = dgvAddRoom.SelectedRows[0].Index;
             rooms.RemoveAt(row);
-            using (StreamWriter writer = new StreamWriter(@"D:\studyNam\projs\DoAn\QLKS\Data\rooms.json"))
+            using (StreamWriter writer = new StreamWriter(@"D:\Test@ABCD\Data\rooms.json"))
             {
                 string json = JsonConvert.SerializeObject(rooms);
                 writer.Write(json);
