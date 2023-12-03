@@ -19,6 +19,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
             displayName = name;
             guna2DragControl1.SetDrag(guna2Panel1);
+            guna2DragControl1.SetDrag(uC_BookRoom1);
+            guna2DragControl1.SetDrag(uC_AddRoom1);
+            guna2DragControl1.SetDrag(uC_Home1);
+            guna2DragControl1.SetDrag(uC_Pay);
 
         }
         private void hideAllUC()

@@ -154,16 +154,13 @@
             this.cbbBTYPE.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbBTYPE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbBTYPE.ItemHeight = 30;
-            this.cbbBTYPE.Items.AddRange(new object[] {
-            "Single",
-            "Double",
-            "Triple"});
             this.cbbBTYPE.Location = new System.Drawing.Point(763, 324);
             this.cbbBTYPE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbBTYPE.Name = "cbbBTYPE";
             this.cbbBTYPE.Size = new System.Drawing.Size(259, 36);
             this.cbbBTYPE.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbBTYPE.TabIndex = 95;
+            this.cbbBTYPE.SelectedIndexChanged += new System.EventHandler(this.cbbBTYPE_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -188,16 +185,13 @@
             this.cbbRCLASS.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbRCLASS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbRCLASS.ItemHeight = 30;
-            this.cbbRCLASS.Items.AddRange(new object[] {
-            "VIP",
-            "Business Class",
-            "Economy Class"});
             this.cbbRCLASS.Location = new System.Drawing.Point(763, 203);
             this.cbbRCLASS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbRCLASS.Name = "cbbRCLASS";
             this.cbbRCLASS.Size = new System.Drawing.Size(259, 36);
             this.cbbRCLASS.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbRCLASS.TabIndex = 93;
+            this.cbbRCLASS.SelectedIndexChanged += new System.EventHandler(this.cbbRCLASS_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -495,17 +489,13 @@
             this.cbbIDRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbIDRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbIDRoom.ItemHeight = 30;
-            this.cbbIDRoom.Items.AddRange(new object[] {
-            "a",
-            "b",
-            "c",
-            "d"});
             this.cbbIDRoom.Location = new System.Drawing.Point(764, 450);
             this.cbbIDRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbIDRoom.Name = "cbbIDRoom";
             this.cbbIDRoom.Size = new System.Drawing.Size(259, 36);
             this.cbbIDRoom.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbIDRoom.TabIndex = 97;
+            this.cbbIDRoom.SelectedIndexChanged += new System.EventHandler(this.cbbIDRoom_SelectedIndexChanged);
             // 
             // gunaAreaDataset1
             // 

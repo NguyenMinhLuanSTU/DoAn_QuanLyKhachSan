@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 
         public string RCLASS { get; set; }
         public string BTYPE { get; set; }
-        private double Price { get; set; }
+        public double Price { get; set; }
         public bool Hired { get; set; }
         
         public CRoom() { }

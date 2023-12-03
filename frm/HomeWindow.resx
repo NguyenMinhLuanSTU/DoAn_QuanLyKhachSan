@@ -12776,13 +12776,6 @@
         OdDex2tO903aYV4IJERZ2nZiP//Z
 </value>
   </data>
-  <data name="guna2PictureBox10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAC5JREFUSEtjGAWjYBSMAtLBUSD+TyE+DMQ4AUgSmyZS8CEgHgWjYBSMAuIBAwMA
-        rIoi7gjuakgAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="uC_Home1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAgEASABIAAD/4gxYSUNDX1BST0ZJTEUAAQEAAAxITGlubwIQAABtbnRyUkdCIFhZ
@@ -43815,6 +43808,13 @@
         QVvXIvBOTy4GtzH9m/Wh5Kt+GSgw97EL+aYt4VdRFH/UrbOxVXxyoqbQg1hr1mODOTWc/iGGFEApX+IM
         Lek7OW5c17odgxQbCilQFX9/xHkX/MxLeuzZX1EkJv2VRBBN/mYqSivIeKV/WJb45K/wRlfR3YSKc2Ns
         41y4vGhlTSsNWIZlw2165ABZdkZs0nktDaGFovOT8H/M/9k=
+</value>
+  </data>
+  <data name="guna2PictureBox10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAC5JREFUSEtjGAWjYBSMAtLBUSD+TyE+DMQ4AUgSmyZS8CEgHgWjYBSMAuIBAwMA
+        rIoi7gjuakgAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

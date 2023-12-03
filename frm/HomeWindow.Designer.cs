@@ -50,10 +50,10 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.uC_BookRoom1 = new WindowsFormsApp1.User_Control.UC_BookRoom();
             this.uC_Home1 = new WindowsFormsApp1.User_Control.UC_Home();
             this.uC_Pay = new WindowsFormsApp1.User_Control.UC_Pay();
             this.uC_AddRoom1 = new WindowsFormsApp1.User_Control.uc_AddRoom();
-            this.uC_BookRoom1 = new WindowsFormsApp1.User_Control.UC_BookRoom();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
@@ -400,6 +400,19 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // uC_BookRoom1
+            // 
+            this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
+            this.uC_BookRoom1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_BookRoom1.BackgroundImage")));
+            this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
+            this.uC_BookRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_BookRoom1.Name = "uC_BookRoom1";
+            this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
+            this.uC_BookRoom1.TabIndex = 7;
+            this.uC_BookRoom1.Visible = false;
+            // 
             // uC_Home1
             // 
             this.uC_Home1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Home1.BackgroundImage")));
@@ -429,19 +442,6 @@
             this.uC_AddRoom1.Size = new System.Drawing.Size(1081, 800);
             this.uC_AddRoom1.TabIndex = 6;
             this.uC_AddRoom1.Visible = false;
-            // 
-            // uC_BookRoom1
-            // 
-            this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
-            this.uC_BookRoom1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_BookRoom1.BackgroundImage")));
-            this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
-            this.uC_BookRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_BookRoom1.Name = "uC_BookRoom1";
-            this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
-            this.uC_BookRoom1.TabIndex = 7;
-            this.uC_BookRoom1.Visible = false;
             // 
             // HomeWindow
             // 

@@ -57,16 +57,11 @@ namespace WindowsFormsApp1.Data
 
         static string GetSourceCodePath(String fileName)
         {
-            //string sourceCodePath = Path.GetDirectoryName(Environment.CurrentDirectory);
-            //sourceCodePath = Path.GetDirectoryName(sourceCodePath);
-            //sourceCodePath = Path.Combine(sourceCodePath, "Data");
-            //sourceCodePath = Path.Combine(sourceCodePath, fileName);
-            //return sourceCodePath;
-
-            string sourceCodePath = AppDomain.CurrentDomain.BaseDirectory;
-            sourceCodePath = Directory.GetParent(sourceCodePath).FullName;
+            string sourceCodePath = Path.GetDirectoryName(Environment.CurrentDirectory);
+            sourceCodePath = Path.GetDirectoryName(sourceCodePath);
             sourceCodePath = Path.Combine(sourceCodePath, "Data");
-            return Path.Combine(sourceCodePath, fileName);
+            sourceCodePath = Path.Combine(sourceCodePath, fileName);
+            return sourceCodePath;
 
         }
     }
