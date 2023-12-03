@@ -92,8 +92,9 @@
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
+            this.Location = new System.Drawing.Point(290, 1);
             this.Name = "UC_Home";
-            this.Size = new System.Drawing.Size(796, 630);
+            this.Size = new System.Drawing.Size(750, 776);
             this.ResumeLayout(false);
             this.PerformLayout();
 

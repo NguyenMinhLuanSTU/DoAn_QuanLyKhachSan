@@ -1,1 +1,26 @@
-[{"IDRoom":"b","RCLASS":"Business Class","BTYPE":"Double","Price":"3","Hired":false},{"IDRoom":"c","RCLASS":"Business Class","BTYPE":"Double","Price":"3","Hired":false},{"IDRoom":"d","RCLASS":"VIP","BTYPE":"Single","Price":"5","Hired":false},{"IDRoom":"A1","RCLASS":"Business Class","BTYPE":"Double","Price":"3","Hired":false}]
+[
+  {
+    "IDRoom": "A001",
+    "RCLASS": "Business Class",
+    "BTYPE": "Single",
+    "Hired": false
+  },
+  {
+    "IDRoom": "A544",
+    "RCLASS": "Business Class",
+    "BTYPE": "Double",
+    "Hired": false
+  },
+  {
+    "IDRoom": "A002",
+    "RCLASS": "Economy Class",
+    "BTYPE": "Triple",
+    "Hired": false
+  },
+  {
+    "IDRoom": "A003",
+    "RCLASS": "Economy Class",
+    "BTYPE": "Triple",
+    "Hired": false
+  }
+]

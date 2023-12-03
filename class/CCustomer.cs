@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class CCostomer
+    public class CCustomer
     {
-        public string CostomerName {  get; set; }
+        public string CustomerName {  get; set; }
         public string PhoneNumber {  get; set; }
         public string Nationality { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string CCCD { get; set; }
-        public CCostomer() { }
-        public CCostomer(string costomerName, string phoneNumber, string nationality, DateTime dateOfBirth, string address, string cCCD)
+        public CCustomer() { }
+        public CCustomer(string customerName, string phoneNumber, string nationality, DateTime dateOfBirth, string address, string cCCD)
         {
-            CostomerName = costomerName;
+            CustomerName = customerName;
             PhoneNumber = phoneNumber;
             Nationality = nationality;
             DateOfBirth = dateOfBirth;

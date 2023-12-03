@@ -9,25 +9,32 @@ namespace WindowsFormsApp1
     public class CCheck
     {
         public DateTime CheckIn { get; set; }
-        public DateTime CheckOut { get; set; }
-        private int pay;
-        public CCostomer costomer;
+        public DateTime? CheckOut { get; set; }
+        private double pay;
+        public CCustomer customer;
         public CRoom room;
         public CCheck() { }
-        public CCheck(DateTime CheckIn, CCostomer costomer, CRoom room)
+        public CCheck(DateTime CheckIn, CCustomer customer, CRoom room)
         {
             this.CheckIn = CheckIn;
-            this.costomer = costomer;
+            this.customer = customer;
             this.room = room;
         }
-        public CCheck(DateTime CheckOut)
+        public void SetCheckOut(DateTime CheckOut)
         {
             this.CheckOut = CheckOut;
         }
-        public int checkPay()
+        public double CheckPay()
         {
-            pay = (int)(CheckOut.Day - CheckIn.Day) * int.Parse(room.getPrice());
-            return pay;
+            if (CheckOut.HasValue)
+            {
+                pay = (double)(CheckOut.Value.Day - CheckIn.Day) * room.GetPrice();
+                return pay;
+            }
+
+            // Trường hợp không có thông tin CheckOut
+            throw new InvalidOperationException("Không thể tính toán pay khi không có thông tin CheckOut.");
+
         }
     }
 }

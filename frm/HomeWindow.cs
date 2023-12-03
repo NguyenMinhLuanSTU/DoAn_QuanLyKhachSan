@@ -19,12 +19,13 @@ namespace WindowsFormsApp1
             InitializeComponent();
             displayName = name;
             guna2DragControl1.SetDrag(guna2Panel1);
-           
+
         }
         private void hideAllUC()
         {
-            uC_AddRoom.Visible = false;
-            uc_BookRoom.Visible = false;
+            uC_AddRoom1.Visible = false;
+            uC_BookRoom1.Visible = false;
+            uC_Home1.Visible = false;
             uC_Pay.Visible = false;
         }
 
@@ -56,23 +57,10 @@ namespace WindowsFormsApp1
 
         private void btnBookingandpayment_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            hideAllUC();
-            uc_BookRoom.Visible = true;
-        }
-
-        private void btnRoommanagerment_Click(object sender, EventArgs e)
-        {
-
-            hideAllUC();
-            uC_AddRoom.Visible = true;
-
-        }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
@@ -83,6 +71,25 @@ namespace WindowsFormsApp1
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            hideAllUC();
+            uC_Home1.Visible = true;
+        }
+
+        private void btnRoomsControl_Click(object sender, EventArgs e)
+        {
+            hideAllUC();
+            uC_AddRoom1.Visible = true;
+        }
+
+        private void btnBooking_Click(object sender, EventArgs e)
+        {
+            hideAllUC();
+            uC_BookRoom1.Visible = true;
+            UC_BookRoom.rooms = uc_AddRoom.rooms; 
         }
     }
 }

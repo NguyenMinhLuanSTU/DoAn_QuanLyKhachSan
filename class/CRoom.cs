@@ -12,11 +12,11 @@ namespace WindowsFormsApp1
 
         public string RCLASS { get; set; }
         public string BTYPE { get; set; }
-        public string Price { get; set; }
+        private double Price { get; set; }
         public bool Hired { get; set; }
         
         public CRoom() { }
-        public CRoom(string IDRoom,  string RCLASS, string BTYPE,string Price, bool Hired)
+        public CRoom(string IDRoom,  string RCLASS, string BTYPE,double Price, bool Hired)
         {
             this.IDRoom = IDRoom;
             this.RCLASS = RCLASS;
@@ -24,7 +24,8 @@ namespace WindowsFormsApp1
             this.Price = Price;
             this.Hired = Hired;
         }
-        public string getPrice()
+        
+        public double GetPrice()
         {
             return Price;
         }

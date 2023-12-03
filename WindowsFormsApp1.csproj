@@ -87,9 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class\CCheck.cs" />
-    <Compile Include="class\CCostomer.cs" />
+    <Compile Include="class\CCustomer.cs" />
     <Compile Include="class\CRoom.cs" />
     <Compile Include="class\CUser.cs" />
+    <Compile Include="Data\FileControl.cs" />
     <Compile Include="frm\HomeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +118,11 @@
     <Compile Include="User Control\UC_AddRoom.Designer.cs">
       <DependentUpon>UC_AddRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\Uc_BookRoom.cs">
+    <Compile Include="User Control\UC_BookRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\Uc_BookRoom.Designer.cs">
-      <DependentUpon>Uc_BookRoom.cs</DependentUpon>
+    <Compile Include="User Control\UC_BookRoom.Designer.cs">
+      <DependentUpon>UC_BookRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_CustomerDetail.cs">
       <SubType>UserControl</SubType>
@@ -163,8 +164,8 @@
     <EmbeddedResource Include="User Control\UC_AddRoom.resx">
       <DependentUpon>UC_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\Uc_BookRoom.resx">
-      <DependentUpon>Uc_BookRoom.cs</DependentUpon>
+    <EmbeddedResource Include="User Control\UC_BookRoom.resx">
+      <DependentUpon>UC_BookRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_CustomerDetail.resx">
       <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
@@ -176,7 +177,7 @@
       <DependentUpon>UC_Pay.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\checks.json" />
-    <None Include="Data\costomers.json" />
+    <None Include="Data\customers.json" />
     <None Include="Data\rooms.json" />
     <None Include="Data\users.json" />
     <None Include="packages.config" />
