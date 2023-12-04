@@ -34,7 +34,7 @@ namespace WindowsFormsApp1.Data
             }
             else
             {
-                MessageBox.Show("Tệp không tồn tại 1: " + path, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tệp không tồn tại: " + path, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return list;
         }
@@ -57,10 +57,11 @@ namespace WindowsFormsApp1.Data
 
         static string GetSourceCodePath(String fileName)
         {
-            string sourceCodePath = Path.GetDirectoryName(Environment.CurrentDirectory);
-            sourceCodePath = Path.GetDirectoryName(sourceCodePath);
-            sourceCodePath = Path.Combine(sourceCodePath, "Data");
-            sourceCodePath = Path.Combine(sourceCodePath, fileName);
+            var relation = @"..\..\Data\";
+
+            //chưa sửa path được
+            string sourceCodePath = Path.Combine(Environment.CurrentDirectory, relation, fileName);
+
             return sourceCodePath;
 
         }
