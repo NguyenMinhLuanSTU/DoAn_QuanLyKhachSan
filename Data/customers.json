@@ -30,5 +30,13 @@
     "DateOfBirth": "2000-11-14T20:52:10",
     "Address": "đồng tháp",
     "CCCD": "012345678"
+  },
+  {
+    "CustomerName": "nam",
+    "PhoneNumber": "0123654981",
+    "Nationality": "om",
+    "DateOfBirth": "2001-01-14T20:52:10",
+    "Address": "hcm",
+    "CCCD": "1234567891"
   }
 ]

@@ -61,6 +61,7 @@ namespace WindowsFormsApp1.Data
            
             //string sourceCodePath = Path.Combine("D:\\studyNam\\projs\\DoAn\\QLKS\\Data", fileName);
             string sourceCodePath;
+
             if (Environment.CurrentDirectory.Contains("bin"))
             {
                 sourceCodePath = Path.Combine(Environment.CurrentDirectory, relation, fileName);

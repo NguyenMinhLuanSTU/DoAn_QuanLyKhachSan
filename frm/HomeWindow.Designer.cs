@@ -42,7 +42,6 @@
             this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnPayment = new Guna.UI2.WinForms.Guna2Button();
             this.btnBooking = new Guna.UI2.WinForms.Guna2Button();
@@ -54,6 +53,7 @@
             this.uC_Home1 = new WindowsFormsApp1.User_Control.UC_Home();
             this.uC_Pay = new WindowsFormsApp1.User_Control.UC_Pay();
             this.uC_AddRoom1 = new WindowsFormsApp1.User_Control.uc_AddRoom();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
@@ -63,8 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -76,6 +76,7 @@
             // 
             this.guna2Panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.navbar;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Controls.Add(this.lblDisplayName);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox10);
             this.guna2Panel1.Controls.Add(this.picbClose);
@@ -86,7 +87,6 @@
             this.guna2Panel1.Controls.Add(this.guna2PictureBox7);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Controls.Add(this.btnPayment);
             this.guna2Panel1.Controls.Add(this.btnBooking);
@@ -248,20 +248,6 @@
             this.guna2PictureBox3.TabIndex = 10;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.room;
-            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(32, 411);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(27, 25);
-            this.guna2PictureBox2.TabIndex = 10;
-            this.guna2PictureBox2.TabStop = false;
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -295,7 +281,7 @@
             this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.PressedColor = System.Drawing.Color.Transparent;
-            this.btnPayment.Size = new System.Drawing.Size(162, 42);
+            this.btnPayment.Size = new System.Drawing.Size(163, 42);
             this.btnPayment.TabIndex = 7;
             this.btnPayment.Text = "PAYMENT";
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
@@ -319,7 +305,7 @@
             this.btnBooking.Margin = new System.Windows.Forms.Padding(4);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.PressedColor = System.Drawing.Color.Transparent;
-            this.btnBooking.Size = new System.Drawing.Size(226, 42);
+            this.btnBooking.Size = new System.Drawing.Size(227, 42);
             this.btnBooking.TabIndex = 6;
             this.btnBooking.Text = "BOOKING ROOM";
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
@@ -343,7 +329,7 @@
             this.btnRoomsControl.Margin = new System.Windows.Forms.Padding(4);
             this.btnRoomsControl.Name = "btnRoomsControl";
             this.btnRoomsControl.PressedColor = System.Drawing.Color.Transparent;
-            this.btnRoomsControl.Size = new System.Drawing.Size(246, 42);
+            this.btnRoomsControl.Size = new System.Drawing.Size(245, 42);
             this.btnRoomsControl.TabIndex = 5;
             this.btnRoomsControl.Text = "ROOMS CONTROL";
             this.btnRoomsControl.Click += new System.EventHandler(this.btnRoomsControl_Click);
@@ -403,7 +389,6 @@
             // uC_BookRoom1
             // 
             this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
-            this.uC_BookRoom1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_BookRoom1.BackgroundImage")));
             this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
@@ -444,6 +429,20 @@
             this.uC_AddRoom1.TabIndex = 6;
             this.uC_AddRoom1.Visible = false;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.room;
+            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(32, 411);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(27, 25);
+            this.guna2PictureBox2.TabIndex = 20;
+            this.guna2PictureBox2.TabStop = false;
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -470,8 +469,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,7 +486,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnPayment;
         private Guna.UI2.WinForms.Guna2Button btnBooking;
@@ -504,5 +502,6 @@
         private User_Control.UC_Home uC_Home1;
         private User_Control.uc_AddRoom uC_AddRoom1;
         private User_Control.UC_BookRoom uC_BookRoom1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }

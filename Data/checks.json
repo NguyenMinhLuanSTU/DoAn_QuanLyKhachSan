@@ -58,5 +58,20 @@
     "price": 7.5,
     "CheckIn": "2023-12-05T20:52:10",
     "CheckOut": null
+  },
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "nam",
+      "PhoneNumber": "0123654981",
+      "Nationality": "om",
+      "DateOfBirth": "2001-01-14T20:52:10",
+      "Address": "hcm",
+      "CCCD": "1234567891"
+    },
+    "idRoom": "V214",
+    "price": 4.0,
+    "CheckIn": "2023-12-06T20:52:10",
+    "CheckOut": null
   }
 ]

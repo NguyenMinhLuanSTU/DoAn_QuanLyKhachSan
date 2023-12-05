@@ -106,7 +106,7 @@ namespace WindowsFormsApp1.User_Control
             }
 
             //Conditions: ID Customer
-            if (!IsNumberValid(txtPhone.Text, 9, 12))
+            if (!IsNumberValid(txtCCCD.Text, 9, 12))
             {
                 MessageBox.Show("Lỗi ID Customer !!!\nCó 9 hoặc 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -159,6 +159,7 @@ namespace WindowsFormsApp1.User_Control
 
             // Lấy giá trị đã chọn từ cbbBTYPE
             string selectedBType = cbbBTYPE.Text;
+
         rooms = FileControl<CRoom>.Read("rooms.json");
 
         // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn

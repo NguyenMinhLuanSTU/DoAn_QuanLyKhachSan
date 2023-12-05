@@ -107,19 +107,19 @@ namespace WindowsFormsApp1.User_Control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (dgvAddRoom.SelectedRows.Count > 0)
             {
-                if (dgvAddRoom.SelectedRows.Count > 0)
+                if (MessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int row = dgvAddRoom.SelectedRows[0].Index;
                     rooms.RemoveAt(row);
                     dgvUpdate();
                     FileControl<CRoom>.Write(rooms, "rooms.json");
                 }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn một phòng để xoá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một phòng để xoá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

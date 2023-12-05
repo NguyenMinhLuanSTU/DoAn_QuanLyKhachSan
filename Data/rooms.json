@@ -28,13 +28,6 @@
     "Hired": false
   },
   {
-    "IDRoom": "A022",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
     "IDRoom": "A023",
     "RCLASS": "Economy Class",
     "BTYPE": "Double",
@@ -74,6 +67,13 @@
     "RCLASS": "VIP",
     "BTYPE": "Single",
     "Price": 5.0,
+    "Hired": false
+  },
+  {
+    "IDRoom": "A111",
+    "RCLASS": "Business Class",
+    "BTYPE": "Single",
+    "Price": 2.0,
     "Hired": false
   }
 ]
