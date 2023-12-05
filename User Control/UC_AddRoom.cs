@@ -36,6 +36,7 @@ namespace WindowsFormsApp1.User_Control
         {
             dgvAddRoom.DataSource = null;
             dgvAddRoom.DataSource = rooms;
+            //dgvAddRoom.Sort(dgvAddRoom.Columns["Column1"], ListSortDirection.Ascending);
         }
         private void resetText()
         {
@@ -77,7 +78,7 @@ namespace WindowsFormsApp1.User_Control
             //add dữ liệu hiện có vào class
             CRoom room = new CRoom(txtIDRoom.Text, cbbRCLASS.Text, cbbBTYPE.Text, double.Parse(txtPrice.Text), false);
 
-            //kiểm tra id room với kho lưu trữ class
+            //kiểm tra id idRoom với kho lưu trữ class
             foreach (CRoom r in rooms)
             {
                 if (r.IDRoom == room.IDRoom)
@@ -106,16 +107,19 @@ namespace WindowsFormsApp1.User_Control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvAddRoom.SelectedRows.Count > 0)
+            if (MessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int row = dgvAddRoom.SelectedRows[0].Index;
-                rooms.RemoveAt(row);
-                dgvUpdate();
-                FileControl<CRoom>.Write(rooms, "rooms.json");
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một phòng để xoá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dgvAddRoom.SelectedRows.Count > 0)
+                {
+                    int row = dgvAddRoom.SelectedRows[0].Index;
+                    rooms.RemoveAt(row);
+                    dgvUpdate();
+                    FileControl<CRoom>.Write(rooms, "rooms.json");
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một phòng để xoá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -129,12 +133,18 @@ namespace WindowsFormsApp1.User_Control
 
         private void cbbRCLASS_TextChanged(object sender, EventArgs e)
         {
-            moneyChanged();
+            if (cbbRCLASS.Focused)  // Kiểm tra xem sự kiện có được kích hoạt bởi người dùng không
+            {
+                moneyChanged();
+            }
         }
 
         private void cbbBTYPE_TextChanged(object sender, EventArgs e)
         {
-            moneyChanged();
+            if (cbbBTYPE.Focused)  // Kiểm tra xem sự kiện có được kích hoạt bởi người dùng không
+            {
+                moneyChanged();
+            }
         }
     }
 }

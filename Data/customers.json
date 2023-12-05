@@ -1,26 +1,34 @@
 [
   {
-    "CostomerName": "a",
-    "PhoneNumber": "a",
-    "Nationality": "a",
+    "CustomerName": "nam",
+    "PhoneNumber": "0132",
+    "Nationality": "vn",
     "DateOfBirth": "2023-11-14T20:52:10.605",
-    "Address": "a",
-    "CCCD": "a"
+    "Address": "hcn",
+    "CCCD": "1233"
   },
   {
-    "CostomerName": "nam",
-    "PhoneNumber": "033",
-    "Nationality": "VN",
+    "CustomerName": "nan",
+    "PhoneNumber": "0132",
+    "Nationality": "vn",
     "DateOfBirth": "2023-11-14T20:52:10.605",
-    "Address": "HCM",
-    "CCCD": "089"
+    "Address": "hcn",
+    "CCCD": "123"
   },
   {
-    "CostomerName": "Nam",
-    "PhoneNumber": "098",
-    "Nationality": "VN",
-    "DateOfBirth": "2023-11-14T20:52:10.605",
-    "Address": "HCM",
-    "CCCD": "000"
+    "CustomerName": "nam",
+    "PhoneNumber": "0123456798",
+    "Nationality": "vn",
+    "DateOfBirth": "2000-11-14T20:52:10",
+    "Address": "hcm",
+    "CCCD": "123645478"
+  },
+  {
+    "CustomerName": "a",
+    "PhoneNumber": "0123456789",
+    "Nationality": "vn",
+    "DateOfBirth": "2000-11-14T20:52:10",
+    "Address": "đồng tháp",
+    "CCCD": "012345678"
   }
 ]

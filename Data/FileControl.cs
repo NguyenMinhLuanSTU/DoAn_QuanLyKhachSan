@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.Data
             {
                 string json = JsonConvert.SerializeObject(list, Formatting.Indented);
                 File.WriteAllText(path, json);
-                MessageBox.Show("Ghi tệp JSON thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật thành công", fileName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -58,10 +58,17 @@ namespace WindowsFormsApp1.Data
         static string GetSourceCodePath(String fileName)
         {
             var relation = @"..\..\Data\";
-
-            //chưa sửa path được
-            string sourceCodePath = Path.Combine(Environment.CurrentDirectory, relation, fileName);
-
+           
+            //string sourceCodePath = Path.Combine("D:\\studyNam\\projs\\DoAn\\QLKS\\Data", fileName);
+            string sourceCodePath;
+            if (Environment.CurrentDirectory.Contains("bin"))
+            {
+                sourceCodePath = Path.Combine(Environment.CurrentDirectory, relation, fileName);
+            }
+            else
+            {
+                sourceCodePath = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
+            }
             return sourceCodePath;
 
         }

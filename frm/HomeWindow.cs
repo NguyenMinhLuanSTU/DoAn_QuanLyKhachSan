@@ -95,5 +95,10 @@ namespace WindowsFormsApp1
             uC_BookRoom1.Visible = true;
             UC_BookRoom.rooms = uc_AddRoom.rooms; 
         }
+
+        private void uC_BookRoom1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

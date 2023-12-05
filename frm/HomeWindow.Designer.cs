@@ -412,6 +412,7 @@
             this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
             this.uC_BookRoom1.TabIndex = 7;
             this.uC_BookRoom1.Visible = false;
+            this.uC_BookRoom1.Load += new System.EventHandler(this.uC_BookRoom1_Load);
             // 
             // uC_Home1
             // 

@@ -19,8 +19,8 @@ namespace WindowsFormsApp1.User_Control
     public partial class UC_BookRoom : UserControl
     {
         public static List<CCustomer> customers;
-        public static List<CCheck> checks;
-        public static List<CRoom> rooms;
+        public static List<CCheck> checks = FileControl<CCheck>.Read("checks.json");
+        public static List<CRoom> rooms = FileControl<CRoom>.Read("rooms.json");
         public List<String> ids;
         public UC_BookRoom()
         {
@@ -71,18 +71,18 @@ namespace WindowsFormsApp1.User_Control
             }
 
             //Conditions: Date Checkin
-            //if (DateTime.Compare(dtpCheckIn.Value, DateTime.Now) == -1)
-            //{
-            //    MessageBox.Show("Lỗi ngày check in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
+            if (DateTime.Compare(dtpCheckIn.Value, DateTime.Now) == -1)
+            {
+                MessageBox.Show("Lỗi ngày check in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             //Conditions: Date Of Birth
-            //if (!IsDateOfBirthValid(dtpBirth.Value, 18))
-            //{
-            //    MessageBox.Show("Chưa đủ 18 tuổi !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
+            if (!IsDateOfBirthValid(dtpBirth.Value, 18))
+            {
+                MessageBox.Show("Chưa đủ 18 tuổi !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             //Conditions: Name
             if (!IsStringValid(txtName.Text))
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1.User_Control
             //Conditions: ID Customer
             if (!IsNumberValid(txtPhone.Text, 9, 12))
             {
-                MessageBox.Show("Lỗi Phone ID Customer !!!\nCó 9 hoặc 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi ID Customer !!!\nCó 9 hoặc 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -147,11 +147,10 @@ namespace WindowsFormsApp1.User_Control
             cbbRCLASS.DataSource = distinctRClasses;
             cbbBTYPE.DataSource = distinctBTypes;
 
-            cbbIDRoom.Text= "";
-            cbbRCLASS.Text = "";
-            cbbBTYPE.Text = "";
+            cbbIDRoom.Text = null;
+            cbbRCLASS.Text = null;
+            cbbBTYPE.Text = null;
         }
-
 
         private void UpdateComboBoxes()
         {
@@ -160,9 +159,10 @@ namespace WindowsFormsApp1.User_Control
 
             // Lấy giá trị đã chọn từ cbbBTYPE
             string selectedBType = cbbBTYPE.Text;
+        rooms = FileControl<CRoom>.Read("rooms.json");
 
-            // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn
-            var filteredRooms = rooms
+        // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn
+        var filteredRooms = rooms
     .Where(r =>
         (selectedRClass == null || r.RCLASS == selectedRClass) &&
         (selectedBType == null || r.BTYPE == selectedBType))
@@ -174,13 +174,22 @@ namespace WindowsFormsApp1.User_Control
             // Cập nhật Items cho ComboBox IDRoom
             cbbIDRoom.DataSource = roomIDs;
 
-            // Cập nhật Items cho ComboBox cbbRCLASS
-            var rClassList = rooms.Select(r => r.RCLASS).Distinct().ToList();
-            cbbRCLASS.DataSource = rClassList;
 
-            // Cập nhật Items cho ComboBox cbbBTYPE
-            var bTypeList = rooms.Select(r => r.BTYPE).Distinct().ToList();
-            cbbBTYPE.DataSource = bTypeList;
+
+
+        }
+
+        private void UpdatePrice()
+        {
+
+            foreach (CRoom r in rooms)
+            {
+                if (r.IDRoom == cbbIDRoom.Text)
+                {
+                    txtPrice.Text = r.GetPrice().ToString();
+                    return;
+                }
+            }
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)
@@ -189,7 +198,7 @@ namespace WindowsFormsApp1.User_Control
             {
                 if (ValidateInput())
                 {
-                    // làm việc với room
+                    // làm việc với idRoom
                     CRoom room = GetRoomById(cbbIDRoom.Text);
 
 
@@ -203,6 +212,7 @@ namespace WindowsFormsApp1.User_Control
 
                     // Làm việc với customer
                     CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, txtNationality.Text, dtpBirth.Value, txtAddress.Text, txtCCCD.Text);
+
                     //kiểm tra CCCD với kho lưu trữ class
                     foreach (CCustomer ctm in customers)
                     {
@@ -213,11 +223,27 @@ namespace WindowsFormsApp1.User_Control
                             return;
                         }
                     }
-                    //add
+
+
                     customers.Add(customer);
 
+                    CCheck check = new CCheck(dtpCheckIn.Value, customer, room.IDRoom, room.Price);
 
-                    //Làm việc với check
+                    checks.Add(check);
+
+                    FileControl<CCustomer>.Write(customers, "customers.json");
+                    FileControl<CCheck>.Write(checks, "checks.json");
+
+                    //room statut
+                    foreach (CRoom r in rooms)
+                    {
+                        if (r.IDRoom == cbbIDRoom.Text)
+                        {
+                            r.Hired = true;
+                            return;
+                        }
+                    }
+                    FileControl<CRoom>.Write(rooms, "rooms.json");
 
                     //end
                     MessageBox.Show("Đặt phòng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -239,20 +265,35 @@ namespace WindowsFormsApp1.User_Control
 
         private void cbbIDRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Gọi phương thức cập nhật ComboBoxes
-            //UpdateComboBoxes();
+            UpdatePrice();
         }
 
         private void cbbBTYPE_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Gọi phương thức cập nhật ComboBoxes
-            UpdateComboBoxes();
+            if (cbbRCLASS.Text != null)
+            {
+                UpdateComboBoxes();
+            }
+            else
+            {
+                // Cập nhật Items cho ComboBox cbbRCLASS
+                var rClassList = rooms.Select(r => r.RCLASS).Distinct().ToList();
+                cbbRCLASS.DataSource = rClassList;
+            }
         }
 
         private void cbbRCLASS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Gọi phương thức cập nhật ComboBoxes
-            UpdateComboBoxes();
+            if (cbbBTYPE.Text != null)
+            {
+                UpdateComboBoxes();
+            }
+            else
+            {
+                // Cập nhật Items cho ComboBox cbbBTYPE
+                var bTypeList = rooms.Select(r => r.BTYPE).Distinct().ToList();
+                cbbBTYPE.DataSource = bTypeList;
+            }
         }
     }
 }

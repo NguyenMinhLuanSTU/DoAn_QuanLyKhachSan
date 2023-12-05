@@ -10,15 +10,18 @@ namespace WindowsFormsApp1
     {
         public DateTime CheckIn { get; set; }
         public DateTime? CheckOut { get; set; }
-        private double pay;
+        public double pay;
         public CCustomer customer;
-        public CRoom room;
+        public string idRoom;
+        public double price;
         public CCheck() { }
-        public CCheck(DateTime CheckIn, CCustomer customer, CRoom room)
+        public CCheck(DateTime CheckIn, CCustomer customer, string room, double price)
         {
             this.CheckIn = CheckIn;
             this.customer = customer;
-            this.room = room;
+            this.idRoom = room;
+            this.price = price;
+            CheckOut = null;
         }
         public void SetCheckOut(DateTime CheckOut)
         {
@@ -28,7 +31,7 @@ namespace WindowsFormsApp1
         {
             if (CheckOut.HasValue)
             {
-                pay = (double)(CheckOut.Value.Day - CheckIn.Day) * room.GetPrice();
+                pay = (double)(CheckOut.Value.Day - CheckIn.Day) * price;
                 return pay;
             }
 

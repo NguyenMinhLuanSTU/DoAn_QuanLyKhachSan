@@ -12,9 +12,12 @@ namespace WindowsFormsApp1.User_Control
 {
     public partial class UC_Home : UserControl
     {
+        public event EventHandler ButtonClick;
         public UC_Home()
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>52</value>
+    <value>56</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="uC_BookRoom1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -12774,6 +12774,13 @@
         TvrlD50q25I2IersRscCWwhEjHpVu5Fmd7K07kbaEdzvZDVmxWjRJMna7ZIno7CYhojqr9Hnop6pFZD0
         OzEyRLezZAhqz1MRF0IfNoO1mruz4srrU7JDJukdxEEna3Y7HbQxK60RuRoRI3N42FbvZJHfQnbteSIT
         OdDex2tO903aYV4IJERZ2nZiP//Z
+</value>
+  </data>
+  <data name="guna2PictureBox10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAC5JREFUSEtjGAWjYBSMAtLBUSD+TyE+DMQ4AUgSmyZS8CEgHgWjYBSMAuIBAwMA
+        rIoi7gjuakgAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="uC_Home1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -43808,13 +43815,6 @@
         QVvXIvBOTy4GtzH9m/Wh5Kt+GSgw97EL+aYt4VdRFH/UrbOxVXxyoqbQg1hr1mODOTWc/iGGFEApX+IM
         Lek7OW5c17odgxQbCilQFX9/xHkX/MxLeuzZX1EkJv2VRBBN/mYqSivIeKV/WJb45K/wRlfR3YSKc2Ns
         41y4vGhlTSsNWIZlw2165ABZdkZs0nktDaGFovOT8H/M/9k=
-</value>
-  </data>
-  <data name="guna2PictureBox10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAC5JREFUSEtjGAWjYBSMAtLBUSD+TyE+DMQ4AUgSmyZS8CEgHgWjYBSMAuIBAwMA
-        rIoi7gjuakgAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

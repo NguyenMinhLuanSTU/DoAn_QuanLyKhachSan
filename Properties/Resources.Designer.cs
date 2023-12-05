@@ -295,7 +295,7 @@ namespace WindowsFormsApp1.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap room {
             get {
-                object obj = ResourceManager.GetObject("room", resourceCulture);
+                object obj = ResourceManager.GetObject("idRoom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

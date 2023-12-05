@@ -90,6 +90,7 @@
     <Compile Include="class\CCustomer.cs" />
     <Compile Include="class\CRoom.cs" />
     <Compile Include="class\CUser.cs" />
+    <Compile Include="class\Processing.cs" />
     <Compile Include="Data\FileControl.cs" />
     <Compile Include="frm\HomeWindow.cs">
       <SubType>Form</SubType>

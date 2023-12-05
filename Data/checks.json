@@ -1,19 +1,62 @@
-{
-  "costomer": {
-    "CostomerName": "a",
-    "PhoneNumber": "a",
-    "Nationality": "a",
-    "DateOfBirth": "2023-11-14T20:52:10.605",
-    "Address": "a",
-    "CCCD": "a"
+[
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "nam",
+      "PhoneNumber": "0132",
+      "Nationality": "vn",
+      "DateOfBirth": "2023-11-14T20:52:10.605",
+      "Address": "hcn",
+      "CCCD": "1233"
+    },
+    "idRoom": "B456",
+    "price": 7.5,
+    "CheckIn": "2023-11-14T20:52:10.605",
+    "CheckOut": null
   },
-  "room": {
-    "IDRoom": "d",
-    "RCLASS": "VIP",
-    "BTYPE": "Single",
-    "Price": "5",
-    "Hired": false
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "nan",
+      "PhoneNumber": "0132",
+      "Nationality": "vn",
+      "DateOfBirth": "2023-11-14T20:52:10.605",
+      "Address": "hcn",
+      "CCCD": "123"
+    },
+    "idRoom": "B456",
+    "price": 7.5,
+    "CheckIn": "2023-11-14T20:52:10.605",
+    "CheckOut": null
   },
-  "CheckIn": "2023-11-22T20:52:10",
-  "CheckOut":"0001-01-01T00:00:00"
-}
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "nam",
+      "PhoneNumber": "0123456798",
+      "Nationality": "vn",
+      "DateOfBirth": "2000-11-14T20:52:10",
+      "Address": "hcm",
+      "CCCD": "123645478"
+    },
+    "idRoom": "B456",
+    "price": 7.5,
+    "CheckIn": "2023-12-08T20:52:10",
+    "CheckOut": null
+  },
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "a",
+      "PhoneNumber": "0123456789",
+      "Nationality": "vn",
+      "DateOfBirth": "2000-11-14T20:52:10",
+      "Address": "đồng tháp",
+      "CCCD": "012345678"
+    },
+    "idRoom": "B456",
+    "price": 7.5,
+    "CheckIn": "2023-12-05T20:52:10",
+    "CheckOut": null
+  }
+]
