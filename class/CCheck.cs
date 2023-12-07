@@ -10,16 +10,19 @@ namespace WindowsFormsApp1
     {
         public DateTime CheckIn { get; set; }
         public DateTime? CheckOut { get; set; }
-        public double pay;
+        public double pay {  get; set; }
         public CCustomer customer;
-        public string idRoom;
-        public double price;
+        private string idRoom;
+        public string IdRoom { get => idRoom; set => idRoom = value; }
+        
+        public double price {  get; set; }
+
         public CCheck() { }
         public CCheck(DateTime CheckIn, CCustomer customer, string room, double price)
         {
             this.CheckIn = CheckIn;
             this.customer = customer;
-            this.idRoom = room;
+            this.IdRoom = room;
             this.price = price;
             CheckOut = null;
         }

@@ -225,6 +225,19 @@ namespace WindowsFormsApp1.User_Control
                         }
                     }
 
+                    //room statut
+                    foreach (CRoom r in rooms)
+                    {
+                        if (r.IDRoom == cbbIDRoom.Text)
+                        {
+                            if (r.Hired)
+                            {
+                                MessageBox.Show("Phòng đã được đặt!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                            r.Hired = true;
+                        }
+                    }
 
                     customers.Add(customer);
 
@@ -235,15 +248,6 @@ namespace WindowsFormsApp1.User_Control
                     FileControl<CCustomer>.Write(customers, "customers.json");
                     FileControl<CCheck>.Write(checks, "checks.json");
 
-                    //room statut
-                    foreach (CRoom r in rooms)
-                    {
-                        if (r.IDRoom == cbbIDRoom.Text)
-                        {
-                            r.Hired = true;
-                            return;
-                        }
-                    }
                     FileControl<CRoom>.Write(rooms, "rooms.json");
 
                     //end

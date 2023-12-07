@@ -2,76 +2,46 @@
   {
     "pay": 0.0,
     "customer": {
-      "CustomerName": "nam",
-      "PhoneNumber": "0132",
+      "CustomerName": "NAm",
+      "PhoneNumber": "0123456789",
       "Nationality": "vn",
-      "DateOfBirth": "2023-11-14T20:52:10.605",
-      "Address": "hcn",
-      "CCCD": "1233"
-    },
-    "idRoom": "B456",
-    "price": 7.5,
-    "CheckIn": "2023-11-14T20:52:10.605",
-    "CheckOut": null
-  },
-  {
-    "pay": 0.0,
-    "customer": {
-      "CustomerName": "nan",
-      "PhoneNumber": "0132",
-      "Nationality": "vn",
-      "DateOfBirth": "2023-11-14T20:52:10.605",
-      "Address": "hcn",
-      "CCCD": "123"
-    },
-    "idRoom": "B456",
-    "price": 7.5,
-    "CheckIn": "2023-11-14T20:52:10.605",
-    "CheckOut": null
-  },
-  {
-    "pay": 0.0,
-    "customer": {
-      "CustomerName": "nam",
-      "PhoneNumber": "0123456798",
-      "Nationality": "vn",
-      "DateOfBirth": "2000-11-14T20:52:10",
+      "DateOfBirth": "1990-01-14T20:52:10",
       "Address": "hcm",
-      "CCCD": "123645478"
+      "CCCD": "987654321"
+    },
+    "idRoom": "A121",
+    "price": 5.0,
+    "CheckIn": "2023-12-07T20:52:10",
+    "CheckOut": null
+  },
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "Nguyen nam",
+      "PhoneNumber": "0123456789",
+      "Nationality": "VN",
+      "DateOfBirth": "2000-01-01T20:52:10",
+      "Address": "HCM",
+      "CCCD": "123654987123"
+    },
+    "idRoom": "V214",
+    "price": 4.0,
+    "CheckIn": "2023-12-07T20:52:10",
+    "CheckOut": null
+  },
+  {
+    "pay": 0.0,
+    "customer": {
+      "CustomerName": "Nguyen",
+      "PhoneNumber": "0366598747",
+      "Nationality": "VN",
+      "DateOfBirth": "2000-11-14T20:52:10",
+      "Address": "HCM",
+      "CCCD": "123456987"
     },
     "idRoom": "B456",
     "price": 7.5,
     "CheckIn": "2023-12-08T20:52:10",
-    "CheckOut": null
-  },
-  {
-    "pay": 0.0,
-    "customer": {
-      "CustomerName": "a",
-      "PhoneNumber": "0123456789",
-      "Nationality": "vn",
-      "DateOfBirth": "2000-11-14T20:52:10",
-      "Address": "đồng tháp",
-      "CCCD": "012345678"
-    },
-    "idRoom": "B456",
-    "price": 7.5,
-    "CheckIn": "2023-12-05T20:52:10",
-    "CheckOut": null
-  },
-  {
-    "pay": 0.0,
-    "customer": {
-      "CustomerName": "nam",
-      "PhoneNumber": "0123654981",
-      "Nationality": "om",
-      "DateOfBirth": "2001-01-14T20:52:10",
-      "Address": "hcm",
-      "CCCD": "1234567891"
-    },
-    "idRoom": "V214",
-    "price": 4.0,
-    "CheckIn": "2023-12-06T20:52:10",
     "CheckOut": null
   }
 ]

@@ -4,14 +4,14 @@
     "RCLASS": "VIP",
     "BTYPE": "Double",
     "Price": 7.5,
-    "Hired": false
+    "Hired": true
   },
   {
     "IDRoom": "V214",
     "RCLASS": "Business Class",
     "BTYPE": "Triple",
     "Price": 4.0,
-    "Hired": false
+    "Hired": true
   },
   {
     "IDRoom": "G563",
@@ -22,20 +22,6 @@
   },
   {
     "IDRoom": "R213",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A023",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A024",
     "RCLASS": "Economy Class",
     "BTYPE": "Double",
     "Price": 1.5,
@@ -67,13 +53,41 @@
     "RCLASS": "VIP",
     "BTYPE": "Single",
     "Price": 5.0,
-    "Hired": false
+    "Hired": true
   },
   {
     "IDRoom": "A111",
     "RCLASS": "Business Class",
     "BTYPE": "Single",
     "Price": 2.0,
+    "Hired": false
+  },
+  {
+    "IDRoom": "G123",
+    "RCLASS": "Business Class",
+    "BTYPE": "Single",
+    "Price": 2.0,
+    "Hired": false
+  },
+  {
+    "IDRoom": "A324",
+    "RCLASS": "VIP",
+    "BTYPE": "Single",
+    "Price": 5.0,
+    "Hired": false
+  },
+  {
+    "IDRoom": "Y546",
+    "RCLASS": "VIP",
+    "BTYPE": "Double",
+    "Price": 7.5,
+    "Hired": false
+  },
+  {
+    "IDRoom": "U812",
+    "RCLASS": "VIP",
+    "BTYPE": "Double",
+    "Price": 7.5,
     "Hired": false
   }
 ]

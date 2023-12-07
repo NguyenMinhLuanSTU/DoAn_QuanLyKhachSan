@@ -20,6 +20,18 @@ namespace WindowsFormsApp1.User_Control
         {
             InitializeComponent();
         }
+
+        public void ReloadData()
+        {
+            checks = FileControl<CCheck>.Read("checks.json");
+            dgvUpdate();
+
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            checks = FileControl<CCheck>.Read("checks.json");
+        }
+
         private bool Condition()
         {
             //Conditions: Date Checkin
@@ -32,8 +44,13 @@ namespace WindowsFormsApp1.User_Control
         }
         private void dgvUpdate()
         {
-            dgvPay.DataSource = null;
             dgvPay.DataSource = checks;
+
+            //foreach (CCheck check in checks) {
+
+            //    dataGridView1.Rows.Add(check.IdRoom);
+            //}
+
         }
         private void UpdateRoom(string IDRoom)
         {
@@ -48,7 +65,7 @@ namespace WindowsFormsApp1.User_Control
                 }
             }
             FileControl<CRoom>.Write(rooms, "rooms.json");
-            
+
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
@@ -68,6 +85,10 @@ namespace WindowsFormsApp1.User_Control
         private void txtIDRoom_TextChanged(object sender, EventArgs e)
         {
             //lList<CCheck> lc = 
+        }
+
+        private void UC_Pay_ParentChanged(object sender, EventArgs e)
+        {
         }
     }
 }

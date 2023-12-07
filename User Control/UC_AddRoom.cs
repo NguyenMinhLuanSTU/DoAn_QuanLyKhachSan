@@ -103,18 +103,25 @@ namespace WindowsFormsApp1.User_Control
             resetText();
             // ghi nội dung vào json
             FileControl<CRoom>.Write(rooms, "rooms.json");
+            MessageBox.Show("Cập nhật thành công", "ROOM", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvAddRoom.SelectedRows.Count > 0)
             {
+                //if (rooms.Any(r => r.Hired))
+                //{
+                //    MessageBox.Show("Phòng đang được thuê.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
                 if (MessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int row = dgvAddRoom.SelectedRows[0].Index;
                     rooms.RemoveAt(row);
                     dgvUpdate();
                     FileControl<CRoom>.Write(rooms, "rooms.json");
+                    MessageBox.Show("Cập nhật thành công", "ROOM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

@@ -68,6 +68,7 @@ namespace WindowsFormsApp1
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            uC_Pay.ReloadData();
             hideAllUC();
             uC_Pay.Visible = true;
         }

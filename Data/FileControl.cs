@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.Data
             {
                 string json = JsonConvert.SerializeObject(list, Formatting.Indented);
                 File.WriteAllText(path, json);
-                MessageBox.Show("Cập nhật thành công", fileName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Cập nhật tệp thành công", fileName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

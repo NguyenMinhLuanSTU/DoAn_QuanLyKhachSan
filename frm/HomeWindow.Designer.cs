@@ -31,7 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeWindow));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.uC_BookRoom1 = new WindowsFormsApp1.User_Control.UC_BookRoom();
+            this.uC_Pay = new WindowsFormsApp1.User_Control.UC_Pay();
+            this.uC_AddRoom1 = new WindowsFormsApp1.User_Control.uc_AddRoom();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblDisplayName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picbClose = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -48,13 +53,9 @@
             this.btnRoomsControl = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.uC_BookRoom1 = new WindowsFormsApp1.User_Control.UC_BookRoom();
             this.uC_Home1 = new WindowsFormsApp1.User_Control.UC_Home();
-            this.uC_Pay = new WindowsFormsApp1.User_Control.UC_Pay();
-            this.uC_AddRoom1 = new WindowsFormsApp1.User_Control.uc_AddRoom();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
@@ -64,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -72,11 +72,49 @@
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // uC_BookRoom1
+            // 
+            this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
+            this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
+            this.uC_BookRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_BookRoom1.Name = "uC_BookRoom1";
+            this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
+            this.uC_BookRoom1.TabIndex = 7;
+            this.uC_BookRoom1.Visible = false;
+            this.uC_BookRoom1.Load += new System.EventHandler(this.uC_BookRoom1_Load);
+            // 
+            // uC_Pay
+            // 
+            this.uC_Pay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uC_Pay.Location = new System.Drawing.Point(387, 0);
+            this.uC_Pay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Pay.Name = "uC_Pay";
+            this.uC_Pay.Size = new System.Drawing.Size(1081, 800);
+            this.uC_Pay.TabIndex = 4;
+            this.uC_Pay.Visible = false;
+            // 
+            // uC_AddRoom1
+            // 
+            this.uC_AddRoom1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uC_AddRoom1.Location = new System.Drawing.Point(385, 0);
+            this.uC_AddRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_AddRoom1.Name = "uC_AddRoom1";
+            this.uC_AddRoom1.Size = new System.Drawing.Size(1081, 800);
+            this.uC_AddRoom1.TabIndex = 6;
+            this.uC_AddRoom1.Visible = false;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.navbar;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
+            this.guna2Panel1.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel1.Controls.Add(this.lblDisplayName);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox10);
             this.guna2Panel1.Controls.Add(this.picbClose);
@@ -99,6 +137,20 @@
             this.guna2Panel1.Size = new System.Drawing.Size(387, 800);
             this.guna2Panel1.TabIndex = 1;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.room1;
+            this.guna2PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(32, 411);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(31, 28);
+            this.guna2PictureBox5.TabIndex = 21;
+            this.guna2PictureBox5.TabStop = false;
             // 
             // lblDisplayName
             // 
@@ -381,24 +433,6 @@
             this.btnHome.Text = "HOME";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // uC_BookRoom1
-            // 
-            this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
-            this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
-            this.uC_BookRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_BookRoom1.Name = "uC_BookRoom1";
-            this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
-            this.uC_BookRoom1.TabIndex = 7;
-            this.uC_BookRoom1.Visible = false;
-            this.uC_BookRoom1.Load += new System.EventHandler(this.uC_BookRoom1_Load);
-            // 
             // uC_Home1
             // 
             this.uC_Home1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Home1.BackgroundImage")));
@@ -409,50 +443,16 @@
             this.uC_Home1.Size = new System.Drawing.Size(1081, 800);
             this.uC_Home1.TabIndex = 5;
             // 
-            // uC_Pay
-            // 
-            this.uC_Pay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.uC_Pay.Location = new System.Drawing.Point(387, 0);
-            this.uC_Pay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Pay.Name = "uC_Pay";
-            this.uC_Pay.Size = new System.Drawing.Size(1081, 800);
-            this.uC_Pay.TabIndex = 4;
-            this.uC_Pay.Visible = false;
-            // 
-            // uC_AddRoom1
-            // 
-            this.uC_AddRoom1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.uC_AddRoom1.Location = new System.Drawing.Point(385, 0);
-            this.uC_AddRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_AddRoom1.Name = "uC_AddRoom1";
-            this.uC_AddRoom1.Size = new System.Drawing.Size(1081, 800);
-            this.uC_AddRoom1.TabIndex = 6;
-            this.uC_AddRoom1.Visible = false;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.room;
-            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(32, 411);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(27, 25);
-            this.guna2PictureBox2.TabIndex = 20;
-            this.guna2PictureBox2.TabStop = false;
-            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 800);
-            this.Controls.Add(this.uC_BookRoom1);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.uC_Home1);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.uC_Pay);
             this.Controls.Add(this.uC_AddRoom1);
+            this.Controls.Add(this.uC_BookRoom1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomeWindow";
@@ -461,6 +461,7 @@
             this.Load += new System.EventHandler(this.HomeWindow_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
@@ -470,7 +471,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,6 +502,6 @@
         private User_Control.UC_Home uC_Home1;
         private User_Control.uc_AddRoom uC_AddRoom1;
         private User_Control.UC_BookRoom uC_BookRoom1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
     }
 }
