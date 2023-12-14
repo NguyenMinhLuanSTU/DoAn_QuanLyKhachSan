@@ -13,15 +13,19 @@ namespace WindowsFormsApp1
         public string Password { get; set; }
         public string Email { get; set; }
 
+        public CUser() { }
         public CUser(string username, string password, string email)
         {
             Username = username;
             Password = password;
             Email = email;
         }
-
-        public CUser()
+        public CUser(string username, string password)
         {
+            Username = username;
+            Password = password;
         }
+
+
     }
 }

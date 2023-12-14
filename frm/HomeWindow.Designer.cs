@@ -32,9 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeWindow));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.uC_BookRoom1 = new WindowsFormsApp1.User_Control.UC_BookRoom();
-            this.uC_Pay = new WindowsFormsApp1.User_Control.UC_Pay();
-            this.uC_AddRoom1 = new WindowsFormsApp1.User_Control.uc_AddRoom();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblDisplayName = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,6 +51,9 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.uC_Home1 = new WindowsFormsApp1.User_Control.UC_Home();
+            this.uC_Pay = new WindowsFormsApp1.User_Control.UC_Pay();
+            this.uC_AddRoom1 = new WindowsFormsApp1.User_Control.uc_AddRoom();
+            this.uC_BookRoom1 = new WindowsFormsApp1.User_Control.UC_BookRoom();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
@@ -76,39 +76,6 @@
             // 
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // uC_BookRoom1
-            // 
-            this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
-            this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
-            this.uC_BookRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_BookRoom1.Name = "uC_BookRoom1";
-            this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
-            this.uC_BookRoom1.TabIndex = 7;
-            this.uC_BookRoom1.Visible = false;
-            this.uC_BookRoom1.Load += new System.EventHandler(this.uC_BookRoom1_Load);
-            // 
-            // uC_Pay
-            // 
-            this.uC_Pay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.uC_Pay.Location = new System.Drawing.Point(387, 0);
-            this.uC_Pay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Pay.Name = "uC_Pay";
-            this.uC_Pay.Size = new System.Drawing.Size(1081, 800);
-            this.uC_Pay.TabIndex = 4;
-            this.uC_Pay.Visible = false;
-            // 
-            // uC_AddRoom1
-            // 
-            this.uC_AddRoom1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.uC_AddRoom1.Location = new System.Drawing.Point(385, 0);
-            this.uC_AddRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_AddRoom1.Name = "uC_AddRoom1";
-            this.uC_AddRoom1.Size = new System.Drawing.Size(1081, 800);
-            this.uC_AddRoom1.TabIndex = 6;
-            this.uC_AddRoom1.Visible = false;
             // 
             // guna2Panel1
             // 
@@ -145,7 +112,7 @@
             this.guna2PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(32, 411);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(30, 408);
             this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
             this.guna2PictureBox5.Size = new System.Drawing.Size(31, 28);
@@ -160,9 +127,9 @@
             this.lblDisplayName.Location = new System.Drawing.Point(81, 746);
             this.lblDisplayName.Margin = new System.Windows.Forms.Padding(4);
             this.lblDisplayName.Name = "lblDisplayName";
-            this.lblDisplayName.Size = new System.Drawing.Size(132, 19);
+            this.lblDisplayName.Size = new System.Drawing.Size(23, 19);
             this.lblDisplayName.TabIndex = 19;
-            this.lblDisplayName.Text = "ACCOUNT LOGIN";
+            this.lblDisplayName.Text = "----";
             // 
             // guna2PictureBox10
             // 
@@ -279,7 +246,7 @@
             this.guna2PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(33, 559);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(32, 564);
             this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.Size = new System.Drawing.Size(27, 25);
@@ -293,7 +260,7 @@
             this.guna2PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(33, 487);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(32, 487);
             this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(28, 26);
@@ -307,7 +274,7 @@
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(32, 338);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(31, 338);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(31, 28);
@@ -325,17 +292,18 @@
             this.btnPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPayment.FillColor = System.Drawing.Color.Transparent;
-            this.btnPayment.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnPayment.HoverState.ForeColor = System.Drawing.Color.Silver;
-            this.btnPayment.Location = new System.Drawing.Point(75, 549);
+            this.btnPayment.Location = new System.Drawing.Point(75, 556);
             this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnPayment.PressedColor = System.Drawing.Color.Transparent;
-            this.btnPayment.Size = new System.Drawing.Size(163, 42);
+            this.btnPayment.Size = new System.Drawing.Size(185, 42);
             this.btnPayment.TabIndex = 7;
-            this.btnPayment.Text = "PAYMENT";
+            this.btnPayment.Text = "Thanh toán";
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnBooking
@@ -349,17 +317,18 @@
             this.btnBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBooking.FillColor = System.Drawing.Color.Transparent;
-            this.btnBooking.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooking.ForeColor = System.Drawing.Color.White;
             this.btnBooking.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBooking.HoverState.ForeColor = System.Drawing.Color.Silver;
             this.btnBooking.Location = new System.Drawing.Point(75, 479);
             this.btnBooking.Margin = new System.Windows.Forms.Padding(4);
             this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnBooking.PressedColor = System.Drawing.Color.Transparent;
-            this.btnBooking.Size = new System.Drawing.Size(227, 42);
+            this.btnBooking.Size = new System.Drawing.Size(179, 42);
             this.btnBooking.TabIndex = 6;
-            this.btnBooking.Text = "BOOKING ROOM";
+            this.btnBooking.Text = "Đặt Phòng";
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // btnRoomsControl
@@ -373,17 +342,18 @@
             this.btnRoomsControl.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRoomsControl.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRoomsControl.FillColor = System.Drawing.Color.Transparent;
-            this.btnRoomsControl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomsControl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoomsControl.ForeColor = System.Drawing.Color.White;
             this.btnRoomsControl.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnRoomsControl.HoverState.ForeColor = System.Drawing.Color.Silver;
             this.btnRoomsControl.Location = new System.Drawing.Point(73, 406);
             this.btnRoomsControl.Margin = new System.Windows.Forms.Padding(4);
             this.btnRoomsControl.Name = "btnRoomsControl";
+            this.btnRoomsControl.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnRoomsControl.PressedColor = System.Drawing.Color.Transparent;
-            this.btnRoomsControl.Size = new System.Drawing.Size(245, 42);
+            this.btnRoomsControl.Size = new System.Drawing.Size(207, 42);
             this.btnRoomsControl.TabIndex = 5;
-            this.btnRoomsControl.Text = "ROOMS CONTROL";
+            this.btnRoomsControl.Text = "Quản lí phòng";
             this.btnRoomsControl.Click += new System.EventHandler(this.btnRoomsControl_Click);
             // 
             // guna2Button4
@@ -420,17 +390,18 @@
             this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHome.FillColor = System.Drawing.Color.Transparent;
-            this.btnHome.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnHome.HoverState.ForeColor = System.Drawing.Color.Silver;
             this.btnHome.Location = new System.Drawing.Point(73, 332);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnHome.PressedColor = System.Drawing.Color.Transparent;
-            this.btnHome.Size = new System.Drawing.Size(119, 42);
+            this.btnHome.Size = new System.Drawing.Size(175, 42);
             this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "HOME";
+            this.btnHome.Text = "Trang chủ";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // uC_Home1
@@ -442,6 +413,39 @@
             this.uC_Home1.Name = "uC_Home1";
             this.uC_Home1.Size = new System.Drawing.Size(1081, 800);
             this.uC_Home1.TabIndex = 5;
+            // 
+            // uC_Pay
+            // 
+            this.uC_Pay.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uC_Pay.Location = new System.Drawing.Point(387, 0);
+            this.uC_Pay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Pay.Name = "uC_Pay";
+            this.uC_Pay.Size = new System.Drawing.Size(1081, 800);
+            this.uC_Pay.TabIndex = 4;
+            this.uC_Pay.Visible = false;
+            // 
+            // uC_AddRoom1
+            // 
+            this.uC_AddRoom1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.uC_AddRoom1.Location = new System.Drawing.Point(385, 0);
+            this.uC_AddRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_AddRoom1.Name = "uC_AddRoom1";
+            this.uC_AddRoom1.Size = new System.Drawing.Size(1081, 800);
+            this.uC_AddRoom1.TabIndex = 6;
+            this.uC_AddRoom1.Visible = false;
+            // 
+            // uC_BookRoom1
+            // 
+            this.uC_BookRoom1.BackColor = System.Drawing.Color.White;
+            this.uC_BookRoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_BookRoom1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.uC_BookRoom1.Location = new System.Drawing.Point(387, 0);
+            this.uC_BookRoom1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_BookRoom1.Name = "uC_BookRoom1";
+            this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
+            this.uC_BookRoom1.TabIndex = 7;
+            this.uC_BookRoom1.Visible = false;
+            this.uC_BookRoom1.Load += new System.EventHandler(this.uC_BookRoom1_Load);
             // 
             // HomeWindow
             // 

@@ -194,6 +194,9 @@
             // 
             // dgvAddRoom
             // 
+            this.dgvAddRoom.AllowUserToAddRows = false;
+            this.dgvAddRoom.AllowUserToDeleteRows = false;
+            this.dgvAddRoom.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvAddRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAddRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -252,6 +255,7 @@
             this.dgvAddRoom.ThemeStyle.RowsStyle.Height = 24;
             this.dgvAddRoom.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAddRoom.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvAddRoom.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAddRoom_CellFormatting);
             // 
             // label1
             // 
@@ -325,44 +329,46 @@
             // 
             this.Column1.DataPropertyName = "IDRoom";
             this.Column1.FillWeight = 72.1925F;
-            this.Column1.HeaderText = "ID ROOM";
+            this.Column1.HeaderText = "Mã Phòng";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "RCLASS";
             this.Column2.FillWeight = 142.7186F;
-            this.Column2.HeaderText = "TYPE ROOM";
+            this.Column2.HeaderText = "Loại Phòng";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "BTYPE";
             this.Column3.FillWeight = 79.3813F;
-            this.Column3.HeaderText = "BED";
+            this.Column3.HeaderText = "Loại Giường";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "Price";
             this.Column4.FillWeight = 78.84612F;
-            this.Column4.HeaderText = "PRICE";
+            this.Column4.HeaderText = "Giá Phòng";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "Hired";
             this.Column5.FillWeight = 76.86145F;
-            this.Column5.HeaderText = "HIRED";
+            this.Column5.HeaderText = "Trạng Thái";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;

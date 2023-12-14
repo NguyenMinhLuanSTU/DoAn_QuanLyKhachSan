@@ -275,7 +275,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtAddress.PlaceholderText = "Enter Address";
+            this.txtAddress.PlaceholderText = "Tỉnh/Thành Phố";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(261, 39);
             this.txtAddress.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -323,7 +323,7 @@
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.PasswordChar = '\0';
             this.txtNationality.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtNationality.PlaceholderText = "Enter Nationality";
+            this.txtNationality.PlaceholderText = "Nhập Quốc Tịch";
             this.txtNationality.SelectedText = "";
             this.txtNationality.Size = new System.Drawing.Size(261, 39);
             this.txtNationality.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -359,7 +359,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtPhone.PlaceholderText = "Enter Phone Number";
+            this.txtPhone.PlaceholderText = "Số điện thoại 10 hoặc 11 số";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(261, 39);
             this.txtPhone.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -395,7 +395,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.PasswordChar = '\0';
             this.txtCCCD.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtCCCD.PlaceholderText = "Enter ID";
+            this.txtCCCD.PlaceholderText = "Số căn cước công dân";
             this.txtCCCD.SelectedText = "";
             this.txtCCCD.Size = new System.Drawing.Size(261, 39);
             this.txtCCCD.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -453,7 +453,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtName.PlaceholderText = "Enter Name";
+            this.txtName.PlaceholderText = "Nguyễn Văn A";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(261, 39);
             this.txtName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;

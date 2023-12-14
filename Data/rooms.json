@@ -89,5 +89,26 @@
     "BTYPE": "Double",
     "Price": 7.5,
     "Hired": false
+  },
+  {
+    "IDRoom": "A412",
+    "RCLASS": "Business Class",
+    "BTYPE": "Triple",
+    "Price": 4.0,
+    "Hired": false
+  },
+  {
+    "IDRoom": "A883",
+    "RCLASS": "VIP",
+    "BTYPE": "Double",
+    "Price": 7.5,
+    "Hired": false
+  },
+  {
+    "IDRoom": "A133",
+    "RCLASS": "Economy Class",
+    "BTYPE": "Single",
+    "Price": 1.0,
+    "Hired": false
   }
 ]

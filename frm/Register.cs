@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
+using WindowsFormsApp1.Data;
 
 namespace WindowsFormsApp1
 {
@@ -15,6 +17,13 @@ namespace WindowsFormsApp1
         public Register()
         {
             InitializeComponent();
+        }
+
+        public static List<CUser> users;
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            users = FileControl<CUser>.Read("users.json");
         }
 
         private void picbClose_Click(object sender, EventArgs e)
@@ -57,14 +66,21 @@ namespace WindowsFormsApp1
         private void btnCreate_Click(object sender, EventArgs e)
         {
             CUser newUser = new CUser(txtUsername.Text, txtPassword.Text, txtEmail.Text);
-            if (CUserData.Find(txtUsername.Text, ref newUser) == false)
+            foreach (CUser u in users)
             {
-                CUserData.Add(newUser);
-                CUserData.SaveUserData();
-                Login lg = new Login();
-                lg.Show();
-                this.Close();
+                if (u.Username == txtUsername.Text)
+                {
+                    MessageBox.Show("Username đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+            users.Add(newUser);
+            FileControl<CUser>.Write(users,"users.json");
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
         }
+
+
     }
 }

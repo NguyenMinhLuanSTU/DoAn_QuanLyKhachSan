@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Web.Security;
 using System.Windows.Forms;
 using WindowsFormsApp1.Data;
+using WindowsFormsApp1.frm;
 
 namespace WindowsFormsApp1.User_Control
 {
     public partial class UC_Pay : UserControl
     {
-        public static List<CCheck> checks = FileControl<CCheck>.Read("checks.json");
-        public static List<CRoom> rooms = FileControl<CRoom>.Read("rooms.json");
+        public static List<CCheck> checks;
+        public static List<CRoom> rooms;
         public UC_Pay()
         {
             InitializeComponent();
@@ -24,8 +25,8 @@ namespace WindowsFormsApp1.User_Control
         public void ReloadData()
         {
             checks = FileControl<CCheck>.Read("checks.json");
+            rooms = FileControl<CRoom>.Read("rooms.json");
             dgvUpdate();
-
         }
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -35,7 +36,7 @@ namespace WindowsFormsApp1.User_Control
         private bool Condition()
         {
             //Conditions: Date Checkin
-            if (DateTime.Compare(dtpCheckOut.Value, DateTime.Now) == -1 || DateTime.Compare(dtpCheckOut.Value, DateTime.Now) == -1)
+            if (DateTime.Compare(dtpCheckOut.Value.Date, DateTime.Now.Date) == -1 || DateTime.Compare(dtpCheckOut.Value.Date, DateTime.Now.Date) == -1)
             {
                 MessageBox.Show("Lỗi ngày check in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -44,18 +45,12 @@ namespace WindowsFormsApp1.User_Control
         }
         private void dgvUpdate()
         {
-            dgvPay.DataSource = checks;
+            var filter = checks.Where(check => check.CheckOut == null).ToList();
 
-            //foreach (CCheck check in checks) {
-
-            //    dataGridView1.Rows.Add(check.IdRoom);
-            //}
-
+            dgvPay.DataSource = filter;
         }
         private void UpdateRoom(string IDRoom)
         {
-
-
             foreach (CRoom r in rooms)
             {
                 if (r.IDRoom == IDRoom)
@@ -69,26 +64,34 @@ namespace WindowsFormsApp1.User_Control
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
+            //if (dgvPay.SelectedRows.Count > 0)
+            //{
+            //    int row = dgvPay.SelectedRows[0].Index;
+            //    //Bill bill = new Bill();
+            //    //bill.Show();
+            //    UpdateRoom((string)dgvPay.Rows[row].Cells["Column1"].Value);
+            //    dgvUpdate();
+            //    FileControl<CCheck>.Write(checks, "checks.json");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng chọn hoá đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
             if (dgvPay.SelectedRows.Count > 0)
             {
-                int row = dgvPay.SelectedRows[0].Index;
-                dgvUpdate();
-                //UpdateRoom();
-                FileControl<CCheck>.Write(checks, "rooms.json");
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn hoá đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string idRoom = dgvPay.SelectedRows[0].Cells[4].Value.ToString();
+                CCheck rs = checks.Find(c => c.IdRoom == idRoom);
+                if (rs != null)
+                {
+                    rs.SetCheckOut(dtpCheckOut.Value);//Dua gia tri checkout vo
+                    //Truyen thang dang chon vo form
+                    Bill b = new Bill(rs);
+                    b.Show();
+                    FileControl<CCheck>.Write(checks, "checks.json");
+                }
             }
         }
 
-        private void txtIDRoom_TextChanged(object sender, EventArgs e)
-        {
-            //lList<CCheck> lc = 
-        }
-
-        private void UC_Pay_ParentChanged(object sender, EventArgs e)
-        {
-        }
     }
 }

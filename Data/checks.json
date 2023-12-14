@@ -1,6 +1,5 @@
 [
   {
-    "pay": 0.0,
     "customer": {
       "CustomerName": "NAm",
       "PhoneNumber": "0123456789",
@@ -9,13 +8,13 @@
       "Address": "hcm",
       "CCCD": "987654321"
     },
-    "idRoom": "A121",
-    "price": 5.0,
     "CheckIn": "2023-12-07T20:52:10",
-    "CheckOut": null
+    "CheckOut": null,
+    "pay": 0.0,
+    "IdRoom": "A121",
+    "price": 5.0
   },
   {
-    "pay": 0.0,
     "customer": {
       "CustomerName": "Nguyen nam",
       "PhoneNumber": "0123456789",
@@ -24,13 +23,13 @@
       "Address": "HCM",
       "CCCD": "123654987123"
     },
-    "idRoom": "V214",
-    "price": 4.0,
     "CheckIn": "2023-12-07T20:52:10",
-    "CheckOut": null
+    "CheckOut": "2023-12-13T19:49:35",
+    "pay": 0.0,
+    "IdRoom": "V214",
+    "price": 4.0
   },
   {
-    "pay": 0.0,
     "customer": {
       "CustomerName": "Nguyen",
       "PhoneNumber": "0366598747",
@@ -39,9 +38,10 @@
       "Address": "HCM",
       "CCCD": "123456987"
     },
-    "idRoom": "B456",
-    "price": 7.5,
     "CheckIn": "2023-12-08T20:52:10",
-    "CheckOut": null
+    "CheckOut": "2023-12-13T19:49:35",
+    "pay": 0.0,
+    "IdRoom": "B456",
+    "price": 7.5
   }
 ]

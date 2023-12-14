@@ -36,7 +36,7 @@ namespace WindowsFormsApp1.User_Control
         {
             dgvAddRoom.DataSource = null;
             dgvAddRoom.DataSource = rooms;
-            //dgvAddRoom.Sort(dgvAddRoom.Columns["Column1"], ListSortDirection.Ascending);
+
         }
         private void resetText()
         {
@@ -100,6 +100,8 @@ namespace WindowsFormsApp1.User_Control
 
             //Đưa dữ liệu vào DataGridView
             dgvUpdate();
+            dgvAddRoom.Update();
+
             resetText();
             // ghi nội dung vào json
             FileControl<CRoom>.Write(rooms, "rooms.json");
@@ -110,16 +112,21 @@ namespace WindowsFormsApp1.User_Control
         {
             if (dgvAddRoom.SelectedRows.Count > 0)
             {
-                //if (rooms.Any(r => r.Hired))
-                //{
-                //    MessageBox.Show("Phòng đang được thuê.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
+                int row = dgvAddRoom.SelectedRows[0].Index;
+
+                bool isRoomHired = (bool)dgvAddRoom.Rows[row].Cells["Column5"].Value;
+                if (isRoomHired)
+                {
+                    MessageBox.Show("Phòng đang được thuê, không thể xoá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 if (MessageBox.Show("Xác nhận xoá?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int row = dgvAddRoom.SelectedRows[0].Index;
                     rooms.RemoveAt(row);
                     dgvUpdate();
+                    dgvAddRoom.Update();
+
                     FileControl<CRoom>.Write(rooms, "rooms.json");
                     MessageBox.Show("Cập nhật thành công", "ROOM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -128,7 +135,6 @@ namespace WindowsFormsApp1.User_Control
             {
                 MessageBox.Show("Vui lòng chọn một phòng để xoá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void UC_AddRoom_Load(object sender, EventArgs e)
@@ -140,7 +146,7 @@ namespace WindowsFormsApp1.User_Control
 
         private void cbbRCLASS_TextChanged(object sender, EventArgs e)
         {
-            if (cbbRCLASS.Focused)  // Kiểm tra xem sự kiện có được kích hoạt bởi người dùng không
+            if (cbbRCLASS.Focused)  
             {
                 moneyChanged();
             }
@@ -148,9 +154,85 @@ namespace WindowsFormsApp1.User_Control
 
         private void cbbBTYPE_TextChanged(object sender, EventArgs e)
         {
-            if (cbbBTYPE.Focused)  // Kiểm tra xem sự kiện có được kích hoạt bởi người dùng không
+            if (cbbBTYPE.Focused)  
             {
                 moneyChanged();
+            }
+        }
+
+        private void dgvAddRoom_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value == null || e.Value == DBNull.Value)
+                return;
+
+            var columnName = dgvAddRoom.Columns[e.ColumnIndex].Name;
+
+            switch (columnName)
+            {
+                case "Column2":
+                    if (e.Value is string)
+                    {
+                        string value = (string)e.Value;
+                        e.Value = GetRoomTypeDisplayName(value);
+                        e.FormattingApplied = true;
+                    }
+                    break;
+
+                case "Column3":
+                    if (e.Value is string)
+                    {
+                        string value = (string)e.Value;
+                        e.Value = GetBedTypeDisplayName(value);
+                        e.FormattingApplied = true;
+                    }
+                    break;
+
+                case "Column4":
+                    if (e.Value is double)
+                    {
+                        double value = (double)e.Value * 1000000;
+                        string formattedValue = value.ToString("N0") + " VND";
+                        e.Value = formattedValue;
+                        e.FormattingApplied = true;
+                    }
+                    break;
+
+                case "Column5":
+                    if (e.Value is bool)
+                    {
+                        bool value = (bool)e.Value;
+                        e.Value = value ? "Có Người" : "Không Người";
+                        e.FormattingApplied = true;
+                    }
+                    break;
+            }
+        }
+        private string GetRoomTypeDisplayName(string roomType)
+        {
+            switch (roomType)
+            {
+                case "VIP":
+                    return "VIP";
+                case "Business Class":
+                    return "Thương gia";
+                case "Economy Class":
+                    return "Bình dân";
+                default:
+                    return roomType;
+            }
+        }
+        private string GetBedTypeDisplayName(string bedType)
+        {
+            switch (bedType)
+            {
+                case "Single":
+                    return "Đơn";
+                case "Double":
+                    return "Đôi";
+                case "Triple":
+                    return "BA";
+                default:
+                    return bedType;
             }
         }
     }

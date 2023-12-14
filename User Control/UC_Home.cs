@@ -17,7 +17,5 @@ namespace WindowsFormsApp1.User_Control
         {
             InitializeComponent();
         }
-
-        
     }
 }

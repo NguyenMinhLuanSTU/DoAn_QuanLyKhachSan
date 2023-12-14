@@ -19,8 +19,8 @@ namespace WindowsFormsApp1.User_Control
     public partial class UC_BookRoom : UserControl
     {
         public static List<CCustomer> customers;
-        public static List<CCheck> checks = FileControl<CCheck>.Read("checks.json");
-        public static List<CRoom> rooms = FileControl<CRoom>.Read("rooms.json");
+        public static List<CCheck> checks;
+        public static List<CRoom> rooms;
         public List<String> ids;
         public UC_BookRoom()
         {
@@ -42,9 +42,9 @@ namespace WindowsFormsApp1.User_Control
             return true;
         }
 
-        private bool IsNumberValid(string number, int minLength, int maxLength)
+        private bool IsNumberValid(string number, int length)
         {
-            return Regex.IsMatch(number, $@"^\d{{{minLength},{maxLength}}}$");
+            return Regex.IsMatch(number, $@"^\d{length}$");
         }
 
         private bool IsDateOfBirthValid(DateTime birthDate, int minimumAgeInYears)
@@ -106,14 +106,14 @@ namespace WindowsFormsApp1.User_Control
             }
 
             //Conditions: ID Customer
-            if (!IsNumberValid(txtCCCD.Text, 9, 12))
+            if (!IsNumberValid(txtCCCD.Text, 12))
             {
                 MessageBox.Show("Lỗi ID Customer !!!\nCó 9 hoặc 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             //Conditions: Phone Number
-            if (!IsNumberValid(txtPhone.Text, 10, 11))
+            if (!IsNumberValid(txtPhone.Text, 10) || !IsNumberValid(txtPhone.Text, 11))
             {
                 MessageBox.Show("Lỗi Phone Number !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -152,37 +152,25 @@ namespace WindowsFormsApp1.User_Control
             cbbBTYPE.Text = null;
         }
 
-        private void UpdateComboBoxes()
+        private void UpdateCbbIDRoom()
         {
-            // Lấy giá trị đã chọn từ cbbRCLASS
             string selectedRClass = cbbRCLASS.Text;
-
-            // Lấy giá trị đã chọn từ cbbBTYPE
             string selectedBType = cbbBTYPE.Text;
 
-        rooms = FileControl<CRoom>.Read("rooms.json");
-
-        // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn
-        var filteredRooms = rooms
-    .Where(r =>
-        (selectedRClass == null || r.RCLASS == selectedRClass) &&
-        (selectedBType == null || r.BTYPE == selectedBType))
-    .ToList();
+            // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn và cả trạng thái thuê hiện tại
+            var filteredRooms = rooms.Where(
+                r => (selectedRClass == null || r.RCLASS == selectedRClass) && (selectedBType == null || r.BTYPE == selectedBType) && !r.Hired
+            ).ToList();
 
             // Lấy danh sách ID phòng từ danh sách đã lọc
             var roomIDs = filteredRooms.Select(r => r.IDRoom).ToList();
 
             // Cập nhật Items cho ComboBox IDRoom
             cbbIDRoom.DataSource = roomIDs;
-
-
-
-
         }
 
         private void UpdatePrice()
         {
-
             foreach (CRoom r in rooms)
             {
                 if (r.IDRoom == cbbIDRoom.Text)
@@ -208,8 +196,6 @@ namespace WindowsFormsApp1.User_Control
                         MessageBox.Show("Phòng không đúng ID", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
-
 
                     // Làm việc với customer
                     CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, txtNationality.Text, dtpBirth.Value, txtAddress.Text, txtCCCD.Text);
@@ -264,6 +250,7 @@ namespace WindowsFormsApp1.User_Control
         private void UC_BookRoom_Load(object sender, EventArgs e)
         {
             customers = FileControl<CCustomer>.Read("customers.json");
+            checks = FileControl<CCheck>.Read("checks.json");
             rooms = FileControl<CRoom>.Read("rooms.json");
             UpdateComboBoxItems();
         }
@@ -277,7 +264,7 @@ namespace WindowsFormsApp1.User_Control
         {
             if (cbbRCLASS.Text != null)
             {
-                UpdateComboBoxes();
+                UpdateCbbIDRoom();
             }
             else
             {
@@ -291,7 +278,7 @@ namespace WindowsFormsApp1.User_Control
         {
             if (cbbBTYPE.Text != null)
             {
-                UpdateComboBoxes();
+                UpdateCbbIDRoom();
             }
             else
             {
