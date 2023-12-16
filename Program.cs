@@ -16,15 +16,9 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //if (AuthenticationManager.IsUserLoggedIn)
-            //{
-            //    Application.Run(new HomeWindow());
-            //}
-            //else
-            //{
-            //    Application.Run(new Login());
-            //}
             Application.Run(new Login());
         }
     }
 }
+
+

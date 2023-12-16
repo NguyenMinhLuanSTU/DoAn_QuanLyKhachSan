@@ -103,7 +103,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(387, 800);
             this.guna2Panel1.TabIndex = 1;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2PictureBox5
             // 
@@ -445,7 +444,6 @@
             this.uC_BookRoom1.Size = new System.Drawing.Size(1081, 800);
             this.uC_BookRoom1.TabIndex = 7;
             this.uC_BookRoom1.Visible = false;
-            this.uC_BookRoom1.Load += new System.EventHandler(this.uC_BookRoom1_Load);
             // 
             // HomeWindow
             // 

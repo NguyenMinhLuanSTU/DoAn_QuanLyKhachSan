@@ -48,6 +48,7 @@ namespace WindowsFormsApp1.frm
 
             if (result == DialogResult.Yes)
             {
+                DialogResult = DialogResult.No;
                 MessageBox.Show("Đã hủy thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
@@ -59,6 +60,7 @@ namespace WindowsFormsApp1.frm
 
             if (result == DialogResult.Yes)
             {
+                DialogResult = DialogResult.Yes;
                 MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK);
                 //Thay đổi dũ liệu bên form pay
 

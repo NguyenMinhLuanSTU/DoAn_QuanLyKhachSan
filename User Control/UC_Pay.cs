@@ -73,23 +73,26 @@ namespace WindowsFormsApp1.User_Control
             //    dgvUpdate();
             //    FileControl<CCheck>.Write(checks, "checks.json");
             //}
-            //else
-            //{
-            //    MessageBox.Show("Vui lòng chọn hoá đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
 
             if (dgvPay.SelectedRows.Count > 0)
             {
                 string idRoom = dgvPay.SelectedRows[0].Cells[4].Value.ToString();
                 CCheck rs = checks.Find(c => c.IdRoom == idRoom);
-                if (rs != null)
+                int row = dgvPay.SelectedRows[0].Index;
+
+                rs.SetCheckOut(dtpCheckOut.Value);//Dua gia tri checkout vo
+                                                  //Truyen thang dang chon vo form
+                Bill b = new Bill(rs);
+
+                if (b.ShowDialog() == DialogResult.Yes)
                 {
-                    rs.SetCheckOut(dtpCheckOut.Value);//Dua gia tri checkout vo
-                    //Truyen thang dang chon vo form
-                    Bill b = new Bill(rs);
-                    b.Show();
-                    FileControl<CCheck>.Write(checks, "checks.json");
+                    UpdateRoom((string)dgvPay.Rows[row].Cells["Column1"].Value);
+                    //FileControl<CCheck>.Write(checks, "checks.json");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hoá đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

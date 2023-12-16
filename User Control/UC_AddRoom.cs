@@ -35,6 +35,7 @@ namespace WindowsFormsApp1.User_Control
         private void dgvUpdate()
         {
             dgvAddRoom.DataSource = null;
+            //rooms.Sort();
             dgvAddRoom.DataSource = rooms;
 
         }

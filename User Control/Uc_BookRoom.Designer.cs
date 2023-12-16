@@ -41,7 +41,6 @@
             this.dtpBirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.dtpCheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNationality = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,6 +56,8 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.cbbIDRoom = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
+            this.cbbAddress = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCheckIn
@@ -256,30 +257,6 @@
             this.dtpCheckIn.Size = new System.Drawing.Size(260, 39);
             this.dtpCheckIn.TabIndex = 89;
             this.dtpCheckIn.Value = new System.DateTime(2023, 11, 14, 20, 52, 10, 605);
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddress.DefaultText = "";
-            this.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 10.2F);
-            this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(405, 324);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.PasswordChar = '\0';
-            this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtAddress.PlaceholderText = "Tỉnh/Thành Phố";
-            this.txtAddress.SelectedText = "";
-            this.txtAddress.Size = new System.Drawing.Size(261, 39);
-            this.txtAddress.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtAddress.TabIndex = 88;
             // 
             // label3
             // 
@@ -512,12 +489,42 @@
             this.gunaAreaDataset1.FillColor = System.Drawing.Color.Empty;
             this.gunaAreaDataset1.Label = "Area1";
             // 
+            // cbbAddress
+            // 
+            this.cbbAddress.BackColor = System.Drawing.Color.Transparent;
+            this.cbbAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbbAddress.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            this.cbbAddress.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbAddress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbAddress.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbAddress.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbAddress.ForeColor = System.Drawing.Color.Black;
+            this.cbbAddress.ItemHeight = 30;
+            this.cbbAddress.Location = new System.Drawing.Point(405, 324);
+            this.cbbAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbAddress.Name = "cbbAddress";
+            this.cbbAddress.Size = new System.Drawing.Size(261, 36);
+            this.cbbAddress.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbAddress.TabIndex = 102;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(278, 287);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 103;
+            // 
             // UC_BookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbAddress);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label12);
@@ -531,7 +538,6 @@
             this.Controls.Add(this.dtpBirth);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpCheckIn);
-            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNationality);
@@ -568,7 +574,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpBirth;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckIn;
-        private Guna.UI2.WinForms.Guna2TextBox txtAddress;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtNationality;
@@ -584,5 +589,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ComboBox cbbIDRoom;
         private Guna.Charts.WinForms.GunaAreaDataset gunaAreaDataset1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbAddress;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

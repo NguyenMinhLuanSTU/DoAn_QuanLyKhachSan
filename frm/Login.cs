@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
             this.btnSignIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSignIn.FillColor = System.Drawing.Color.DarkSlateBlue;
             this.btnSignIn.FillColor2 = System.Drawing.Color.MediumOrchid;
-            this.btnSignIn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.btnSignIn.Font = new System.Drawing.Font("Sitka Subheading", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.btnSignIn.HoverState.FillColor = System.Drawing.Color.MediumOrchid;
@@ -202,14 +202,13 @@ namespace WindowsFormsApp1
             // 
             this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Sitka Subheading", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(125, 73);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(155, 44);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(183, 44);
             this.guna2HtmlLabel2.TabIndex = 7;
             this.guna2HtmlLabel2.Text = "Xin chào!";
-            this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2HtmlLabel5
             // 
@@ -327,10 +326,10 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 222);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(489, 35);
+            this.label3.Size = new System.Drawing.Size(464, 43);
             this.label3.TabIndex = 3;
             this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁC SẠN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -339,10 +338,10 @@ namespace WindowsFormsApp1
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(109, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(345, 35);
+            this.label2.Size = new System.Drawing.Size(337, 43);
             this.label2.TabIndex = 2;
             this.label2.Text = "CHÀO MỪNG ĐẾN VỚI";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -447,6 +446,10 @@ namespace WindowsFormsApp1
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            if (txtUsername.Text == "" || txtPassword.Text == "")
+            {
+                return;
+            }
             CUser user = new CUser(txtUsername.Text, txtPassword.Text);
             foreach (CUser u in users)
             {
@@ -460,12 +463,12 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        MessageBox.Show("Password incorect!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Sai mật khẩu!", "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     return;
                 }
             }
-            MessageBox.Show("Username not found!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Không có tài khoản này", "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
     }

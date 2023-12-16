@@ -59,23 +59,11 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void btnBookingandpayment_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
         private void btnPayment_Click(object sender, EventArgs e)
         {
             uC_Pay.ReloadData();
             hideAllUC();
             uC_Pay.Visible = true;
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -95,11 +83,6 @@ namespace WindowsFormsApp1
             hideAllUC();
             uC_BookRoom1.Visible = true;
             UC_BookRoom.rooms = uc_AddRoom.rooms; 
-        }
-
-        private void uC_BookRoom1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -21,6 +21,7 @@ namespace WindowsFormsApp1.User_Control
         public static List<CCustomer> customers;
         public static List<CCheck> checks;
         public static List<CRoom> rooms;
+        public static List<string> province;
         public List<String> ids;
         public UC_BookRoom()
         {
@@ -59,7 +60,7 @@ namespace WindowsFormsApp1.User_Control
             if (string.IsNullOrWhiteSpace(txtName.Text)
                 || string.IsNullOrWhiteSpace(txtPhone.Text)
                 || string.IsNullOrWhiteSpace(txtNationality.Text)
-                || string.IsNullOrWhiteSpace(txtAddress.Text)
+                || string.IsNullOrWhiteSpace(cbbAddress.Text)
                 || string.IsNullOrWhiteSpace(txtCCCD.Text)
                 || string.IsNullOrWhiteSpace(cbbBTYPE.Text)
                 || string.IsNullOrWhiteSpace(cbbRCLASS.Text)
@@ -99,7 +100,7 @@ namespace WindowsFormsApp1.User_Control
             }
 
             //Conditions: Address
-            if (!IsStringValid(txtAddress.Text))
+            if (!IsStringValid(cbbAddress.Text))
             {
                 MessageBox.Show("Lỗi address !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -146,17 +147,22 @@ namespace WindowsFormsApp1.User_Control
             cbbIDRoom.DataSource = distinctIDRoom;
             cbbRCLASS.DataSource = distinctRClasses;
             cbbBTYPE.DataSource = distinctBTypes;
+            cbbAddress.DataSource = province;
+            comboBox1.DataSource = province;
 
             cbbIDRoom.Text = null;
             cbbRCLASS.Text = null;
             cbbBTYPE.Text = null;
+            cbbAddress.Text = null;
         }
 
         private void UpdateCbbIDRoom()
         {
+            rooms = FileControl<CRoom>.Read("rooms.json");///wtf cái này méo hiểu sao nó lỗi cay vãi d' :((
+
             string selectedRClass = cbbRCLASS.Text;
             string selectedBType = cbbBTYPE.Text;
-
+            MessageBox.Show("er L163", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn và cả trạng thái thuê hiện tại
             var filteredRooms = rooms.Where(
                 r => (selectedRClass == null || r.RCLASS == selectedRClass) && (selectedBType == null || r.BTYPE == selectedBType) && !r.Hired
@@ -198,7 +204,7 @@ namespace WindowsFormsApp1.User_Control
                     }
 
                     // Làm việc với customer
-                    CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, txtNationality.Text, dtpBirth.Value, txtAddress.Text, txtCCCD.Text);
+                    CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, txtNationality.Text, dtpBirth.Value, cbbAddress.Text, txtCCCD.Text);
 
                     //kiểm tra CCCD với kho lưu trữ class
                     foreach (CCustomer ctm in customers)
@@ -252,6 +258,8 @@ namespace WindowsFormsApp1.User_Control
             customers = FileControl<CCustomer>.Read("customers.json");
             checks = FileControl<CCheck>.Read("checks.json");
             rooms = FileControl<CRoom>.Read("rooms.json");
+            province = FileControl<string>.Read("64tinhthanh.json");
+            province.Sort();
             UpdateComboBoxItems();
         }
 

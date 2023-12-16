@@ -24,7 +24,7 @@
       "CCCD": "123654987123"
     },
     "CheckIn": "2023-12-07T20:52:10",
-    "CheckOut": "2023-12-13T19:49:35",
+    "CheckOut": null,
     "pay": 0.0,
     "IdRoom": "V214",
     "price": 4.0
@@ -32,14 +32,14 @@
   {
     "customer": {
       "CustomerName": "Nguyen",
-      "PhoneNumber": "0366598747",
+      "PhoneNumber": "0366598747", 
       "Nationality": "VN",
       "DateOfBirth": "2000-11-14T20:52:10",
       "Address": "HCM",
       "CCCD": "123456987"
     },
     "CheckIn": "2023-12-08T20:52:10",
-    "CheckOut": "2023-12-13T19:49:35",
+    "CheckOut": null,
     "pay": 0.0,
     "IdRoom": "B456",
     "price": 7.5
