@@ -57,7 +57,6 @@
             this.cbbIDRoom = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             this.cbbAddress = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCheckIn
@@ -508,22 +507,12 @@
             this.cbbAddress.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbAddress.TabIndex = 102;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(278, 287);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 103;
-            // 
             // UC_BookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cbbAddress);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.txtPrice);
@@ -590,6 +579,5 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbIDRoom;
         private Guna.Charts.WinForms.GunaAreaDataset gunaAreaDataset1;
         private Guna.UI2.WinForms.Guna2ComboBox cbbAddress;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

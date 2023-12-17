@@ -185,7 +185,7 @@
     <EmbeddedResource Include="User Control\UC_Pay.resx">
       <DependentUpon>UC_Pay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\64tinhthanh.json" />
+    <None Include="Data\province.json" />
     <None Include="Data\checks.json" />
     <None Include="Data\customers.json" />
     <None Include="Data\rooms.json" />

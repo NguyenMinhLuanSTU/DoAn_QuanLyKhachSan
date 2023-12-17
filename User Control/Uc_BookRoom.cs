@@ -26,9 +26,8 @@ namespace WindowsFormsApp1.User_Control
         public UC_BookRoom()
         {
             InitializeComponent();
-        }
-        protected override void OnPaint(PaintEventArgs e)
-        {
+
+            cbbAddress.DropDownHeight = 150;
         }
 
         private bool IsStringValid(string value)
@@ -148,7 +147,6 @@ namespace WindowsFormsApp1.User_Control
             cbbRCLASS.DataSource = distinctRClasses;
             cbbBTYPE.DataSource = distinctBTypes;
             cbbAddress.DataSource = province;
-            comboBox1.DataSource = province;
 
             cbbIDRoom.Text = null;
             cbbRCLASS.Text = null;
@@ -158,11 +156,10 @@ namespace WindowsFormsApp1.User_Control
 
         private void UpdateCbbIDRoom()
         {
-            rooms = FileControl<CRoom>.Read("rooms.json");///wtf cái này méo hiểu sao nó lỗi cay vãi d' :((
+            rooms = FileControl<CRoom>.Read("rooms.json");
 
             string selectedRClass = cbbRCLASS.Text;
             string selectedBType = cbbBTYPE.Text;
-            MessageBox.Show("er L163", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn và cả trạng thái thuê hiện tại
             var filteredRooms = rooms.Where(
                 r => (selectedRClass == null || r.RCLASS == selectedRClass) && (selectedBType == null || r.BTYPE == selectedBType) && !r.Hired
@@ -239,7 +236,6 @@ namespace WindowsFormsApp1.User_Control
 
                     FileControl<CCustomer>.Write(customers, "customers.json");
                     FileControl<CCheck>.Write(checks, "checks.json");
-
                     FileControl<CRoom>.Write(rooms, "rooms.json");
 
                     //end
@@ -258,7 +254,7 @@ namespace WindowsFormsApp1.User_Control
             customers = FileControl<CCustomer>.Read("customers.json");
             checks = FileControl<CCheck>.Read("checks.json");
             rooms = FileControl<CRoom>.Read("rooms.json");
-            province = FileControl<string>.Read("64tinhthanh.json");
+            province = FileControl<string>.Read("province.json");
             province.Sort();
             UpdateComboBoxItems();
         }

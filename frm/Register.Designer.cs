@@ -192,7 +192,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Location = new System.Drawing.Point(53, 388);
+            this.checkBox1.Location = new System.Drawing.Point(53, 394);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(18, 17);
@@ -227,14 +227,13 @@
             // 
             // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(87, 386);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(87, 394);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(290, 33);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(250, 18);
             this.guna2HtmlLabel1.TabIndex = 5;
             this.guna2HtmlLabel1.Text = "Tôi đồng ý các điều khoản và điều kiện";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -371,14 +370,15 @@
             // 
             // label3
             // 
+            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 306);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(725, 43);
+            this.label3.Size = new System.Drawing.Size(512, 35);
             this.label3.TabIndex = 3;
-            this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁC SẠN";
+            this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁCH SẠN";
             // 
             // label2
             // 
@@ -452,6 +452,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.pnlMainRight.ResumeLayout(false);
+            this.pnlMainRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbwelcom)).EndInit();
             this.ResumeLayout(false);
