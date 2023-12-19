@@ -198,16 +198,6 @@ namespace WindowsFormsApp1.User_Control
                     // Làm việc với customer
                     CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, cbbNationality.Text, dtpBirth.Value, cbbAddress.Text, txtCCCD.Text);
 
-                    //kiểm tra CCCD với kho lưu trữ class
-                    foreach (CCustomer ctm in customers)
-                    {
-                        if (ctm.CCCD == customer.CCCD)
-                        {
-                            MessageBox.Show("Người nãy đã đăng ký.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-
                     //room statut
                     foreach (CRoom r in rooms)
                     {
