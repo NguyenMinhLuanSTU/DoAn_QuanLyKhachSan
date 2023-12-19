@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
 
         private void guna2PictureBox7_Click(object sender, EventArgs e)
         {
-            Login lg = new Login();
+            Login lg = new Login(lblDisplayName.Text);
             lg.Show();
             this.Close();
         }

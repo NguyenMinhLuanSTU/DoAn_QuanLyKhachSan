@@ -23,7 +23,13 @@ namespace WindowsFormsApp1
             guna2DragControl1.SetDrag(pnlMainLeft);
             guna2DragControl1.SetDrag(picbwelcom);
         }
-
+        public Login(string userName)
+        {
+            InitializeComponent();
+            guna2DragControl1.SetDrag(pnlMainLeft);
+            guna2DragControl1.SetDrag(picbwelcom);
+            txtUsername.Text = userName;
+        }
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -36,11 +42,9 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.btnSignIn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,11 +79,9 @@ namespace WindowsFormsApp1
             this.pnlMainLeft.Controls.Add(this.label4);
             this.pnlMainLeft.Controls.Add(this.btnSignIn);
             this.pnlMainLeft.Controls.Add(this.guna2CustomGradientPanel2);
-            this.pnlMainLeft.Controls.Add(this.checkBox1);
             this.pnlMainLeft.Controls.Add(this.guna2HtmlLabel4);
             this.pnlMainLeft.Controls.Add(this.guna2HtmlLabel2);
             this.pnlMainLeft.Controls.Add(this.guna2HtmlLabel5);
-            this.pnlMainLeft.Controls.Add(this.guna2HtmlLabel1);
             this.pnlMainLeft.Controls.Add(this.guna2PictureBox2);
             this.pnlMainLeft.Controls.Add(this.guna2PictureBox1);
             this.pnlMainLeft.Controls.Add(this.txtPassword);
@@ -122,7 +124,7 @@ namespace WindowsFormsApp1
             this.picEyeclose.BackColor = System.Drawing.Color.Transparent;
             this.picEyeclose.Image = global::WindowsFormsApp1.Properties.Resources.closed_eye;
             this.picEyeclose.ImageRotate = 0F;
-            this.picEyeclose.Location = new System.Drawing.Point(331, 232);
+            this.picEyeclose.Location = new System.Drawing.Point(331, 252);
             this.picEyeclose.Name = "picEyeclose";
             this.picEyeclose.Size = new System.Drawing.Size(17, 23);
             this.picEyeclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +139,7 @@ namespace WindowsFormsApp1
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label4.Location = new System.Drawing.Point(235, 431);
+            this.label4.Location = new System.Drawing.Point(230, 421);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 16);
             this.label4.TabIndex = 14;
@@ -161,7 +163,7 @@ namespace WindowsFormsApp1
             this.btnSignIn.HoverState.FillColor = System.Drawing.Color.MediumOrchid;
             this.btnSignIn.HoverState.FillColor2 = System.Drawing.Color.Violet;
             this.btnSignIn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(114, 338);
+            this.btnSignIn.Location = new System.Drawing.Point(129, 334);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(171, 43);
             this.btnSignIn.TabIndex = 2;
@@ -175,26 +177,15 @@ namespace WindowsFormsApp1
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(399, 500);
             this.guna2CustomGradientPanel2.TabIndex = 1;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Location = new System.Drawing.Point(40, 283);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.UseVisualStyleBackColor = false;
-            // 
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(136, 116);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(135, 116);
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(163, 43);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(155, 32);
             this.guna2HtmlLabel4.TabIndex = 11;
             this.guna2HtmlLabel4.Text = "Đăng nhập tài khoản";
             // 
@@ -216,25 +207,12 @@ namespace WindowsFormsApp1
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(103, 423);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(110, 413);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(151, 31);
             this.guna2HtmlLabel5.TabIndex = 3;
             this.guna2HtmlLabel5.Text = "Chưa có tài khoản?";
             this.guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.AutoSize = false;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(65, 282);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(54, 18);
-            this.guna2HtmlLabel1.TabIndex = 5;
-            this.guna2HtmlLabel1.Text = "Ghi nhớ";
-            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2PictureBox2
             // 
@@ -242,7 +220,7 @@ namespace WindowsFormsApp1
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Black;
             this.guna2PictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.password2;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(33, 231);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(35, 251);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(24, 23);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,7 +233,7 @@ namespace WindowsFormsApp1
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.username3;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(33, 172);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(35, 187);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(24, 25);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -268,7 +246,7 @@ namespace WindowsFormsApp1
             this.txtPassword.BorderColor = System.Drawing.Color.BlueViolet;
             this.txtPassword.BorderRadius = 15;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "";
+            this.txtPassword.DefaultText = "a";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -277,7 +255,7 @@ namespace WindowsFormsApp1
             this.txtPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(62, 225);
+            this.txtPassword.Location = new System.Drawing.Point(67, 245);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -293,7 +271,7 @@ namespace WindowsFormsApp1
             this.txtUsername.BorderColor = System.Drawing.Color.BlueViolet;
             this.txtUsername.BorderRadius = 15;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.DefaultText = "";
+            this.txtUsername.DefaultText = "a";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -302,7 +280,7 @@ namespace WindowsFormsApp1
             this.txtUsername.Font = new System.Drawing.Font("Arial", 8.25F);
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(62, 165);
+            this.txtUsername.Location = new System.Drawing.Point(67, 180);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -327,19 +305,19 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 222);
+            this.label3.Location = new System.Drawing.Point(32, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(487, 43);
             this.label3.TabIndex = 3;
             this.label3.Text = "HỆ THỐNG QUẢN LÝ KHÁCH SẠN";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Sitka Subheading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 164);
+            this.label2.Location = new System.Drawing.Point(96, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(337, 43);
             this.label2.TabIndex = 2;
@@ -380,10 +358,12 @@ namespace WindowsFormsApp1
             // 
             // Login
             // 
-            this.ClientSize = new System.Drawing.Size(845, 500);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(831, 493);
             this.Controls.Add(this.pnlMainRight);
             this.Controls.Add(this.pnlMainLeft);
-            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

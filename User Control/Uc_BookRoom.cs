@@ -1,17 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using WindowsFormsApp1.Data;
 
 namespace WindowsFormsApp1.User_Control
@@ -22,12 +14,11 @@ namespace WindowsFormsApp1.User_Control
         public static List<CCheck> checks;
         public static List<CRoom> rooms;
         public static List<string> province;
+        public static List<string> countries;
         public List<String> ids;
         public UC_BookRoom()
         {
             InitializeComponent();
-
-            cbbAddress.DropDownHeight = 150;
         }
 
         private bool IsStringValid(string value)
@@ -42,11 +33,21 @@ namespace WindowsFormsApp1.User_Control
             return true;
         }
 
-        private bool IsNumberValid(string number, int length)
+        private bool isNumber(string itring, int length)
         {
-            return Regex.IsMatch(number, $@"^\d{length}$");
+            if (itring.Length == length)
+            {
+                foreach (var i in itring)
+                {
+                    if (i - '0' > 10)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
         }
-
         private bool IsDateOfBirthValid(DateTime birthDate, int minimumAgeInYears)
         {
             int age = (DateTime.Now.Date - birthDate.Date).Days;
@@ -55,10 +56,11 @@ namespace WindowsFormsApp1.User_Control
 
         private bool ValidateInput()
         {
+            
             //Conditions: Empty value
             if (string.IsNullOrWhiteSpace(txtName.Text)
                 || string.IsNullOrWhiteSpace(txtPhone.Text)
-                || string.IsNullOrWhiteSpace(txtNationality.Text)
+                || string.IsNullOrWhiteSpace(cbbNationality.Text)
                 || string.IsNullOrWhiteSpace(cbbAddress.Text)
                 || string.IsNullOrWhiteSpace(txtCCCD.Text)
                 || string.IsNullOrWhiteSpace(cbbBTYPE.Text)
@@ -69,6 +71,7 @@ namespace WindowsFormsApp1.User_Control
                 MessageBox.Show("Vui lòng không để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
 
             //Conditions: Date Checkin
             if (DateTime.Compare(dtpCheckIn.Value, DateTime.Now) == -1)
@@ -92,30 +95,21 @@ namespace WindowsFormsApp1.User_Control
             }
 
             //Conditions: Nationality
-            if (!IsStringValid(txtNationality.Text))
+            if (!IsStringValid(cbbNationality.Text))
             {
                 MessageBox.Show("Lỗi Nationality !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
-            //Conditions: Address
-            if (!IsStringValid(cbbAddress.Text))
-            {
-                MessageBox.Show("Lỗi address !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            //Conditions: ID Customer
-            if (!IsNumberValid(txtCCCD.Text, 12))
-            {
-                MessageBox.Show("Lỗi ID Customer !!!\nCó 9 hoặc 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             //Conditions: Phone Number
-            if (!IsNumberValid(txtPhone.Text, 10) || !IsNumberValid(txtPhone.Text, 11))
+            if (!isNumber(txtPhone.Text, 10))
             {
-                MessageBox.Show("Lỗi Phone Number !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi Phone Number!!! \n - Có 10 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            //Conditions: ID Customer
+            if (!isNumber(txtCCCD.Text, 12))
+            {
+                MessageBox.Show("Lỗi ID Customer !!!\n - Có 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -140,13 +134,14 @@ namespace WindowsFormsApp1.User_Control
         {
             // Lấy danh sách các loại phòng và loại giường từ danh sách phòng
             var distinctIDRoom = rooms.Select(r => r.IDRoom).Distinct().ToList();
-            var distinctRClasses = rooms.Select(r => r.RCLASS).Distinct().ToList();
-            var distinctBTypes = rooms.Select(r => r.BTYPE).Distinct().ToList();
+            var distinctRClasses = rooms.Select(r => r.RoomClass).Distinct().ToList();
+            var distinctBTypes = rooms.Select(r => r.BedType).Distinct().ToList();
             // Cập nhật Items cho ComboBox
             cbbIDRoom.DataSource = distinctIDRoom;
             cbbRCLASS.DataSource = distinctRClasses;
             cbbBTYPE.DataSource = distinctBTypes;
             cbbAddress.DataSource = province;
+            cbbNationality.DataSource = countries;
 
             cbbIDRoom.Text = null;
             cbbRCLASS.Text = null;
@@ -162,7 +157,7 @@ namespace WindowsFormsApp1.User_Control
             string selectedBType = cbbBTYPE.Text;
             // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn và cả trạng thái thuê hiện tại
             var filteredRooms = rooms.Where(
-                r => (selectedRClass == null || r.RCLASS == selectedRClass) && (selectedBType == null || r.BTYPE == selectedBType) && !r.Hired
+                r => (selectedRClass == null || r.RoomClass == selectedRClass) && (selectedBType == null || r.BedType == selectedBType) && !r.Rent
             ).ToList();
 
             // Lấy danh sách ID phòng từ danh sách đã lọc
@@ -194,21 +189,20 @@ namespace WindowsFormsApp1.User_Control
                     CRoom room = GetRoomById(cbbIDRoom.Text);
 
 
-                    if (cbbBTYPE.Text != room.BTYPE || cbbRCLASS.Text != room.RCLASS)
+                    if (cbbBTYPE.Text != room.BedType || cbbRCLASS.Text != room.RoomClass)
                     {
                         MessageBox.Show("Phòng không đúng ID", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
                     // Làm việc với customer
-                    CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, txtNationality.Text, dtpBirth.Value, cbbAddress.Text, txtCCCD.Text);
+                    CCustomer customer = new CCustomer(txtName.Text, txtPhone.Text, cbbNationality.Text, dtpBirth.Value, cbbAddress.Text, txtCCCD.Text);
 
                     //kiểm tra CCCD với kho lưu trữ class
                     foreach (CCustomer ctm in customers)
                     {
                         if (ctm.CCCD == customer.CCCD)
                         {
-                            // Hiển thị thông báo
                             MessageBox.Show("Người nãy đã đăng ký.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
@@ -219,25 +213,22 @@ namespace WindowsFormsApp1.User_Control
                     {
                         if (r.IDRoom == cbbIDRoom.Text)
                         {
-                            if (r.Hired)
+                            if (r.Rent)
                             {
                                 MessageBox.Show("Phòng đã được đặt!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
-                            r.Hired = true;
+                            r.Rent = true;
                         }
                     }
 
                     customers.Add(customer);
-
                     CCheck check = new CCheck(dtpCheckIn.Value, customer, room.IDRoom, room.Price);
-
                     checks.Add(check);
 
                     FileControl<CCustomer>.Write(customers, "customers.json");
                     FileControl<CCheck>.Write(checks, "checks.json");
                     FileControl<CRoom>.Write(rooms, "rooms.json");
-
                     //end
                     MessageBox.Show("Đặt phòng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -254,8 +245,10 @@ namespace WindowsFormsApp1.User_Control
             customers = FileControl<CCustomer>.Read("customers.json");
             checks = FileControl<CCheck>.Read("checks.json");
             rooms = FileControl<CRoom>.Read("rooms.json");
-            province = FileControl<string>.Read("province.json");
-            province.Sort();
+            province = FileControl<string>.Read("63province.json");
+            countries = FileControl<string>.Read("196countries.json");
+            dtpBirth.Value = DateTime.Now.Date;
+            dtpCheckIn.Value = DateTime.Now.Date;
             UpdateComboBoxItems();
         }
 
@@ -272,8 +265,7 @@ namespace WindowsFormsApp1.User_Control
             }
             else
             {
-                // Cập nhật Items cho ComboBox cbbRCLASS
-                var rClassList = rooms.Select(r => r.RCLASS).Distinct().ToList();
+                var rClassList = rooms.Select(r => r.RoomClass).Distinct().ToList();
                 cbbRCLASS.DataSource = rClassList;
             }
         }
@@ -286,115 +278,9 @@ namespace WindowsFormsApp1.User_Control
             }
             else
             {
-                // Cập nhật Items cho ComboBox cbbBTYPE
-                var bTypeList = rooms.Select(r => r.BTYPE).Distinct().ToList();
+                var bTypeList = rooms.Select(r => r.BedType).Distinct().ToList();
                 cbbBTYPE.DataSource = bTypeList;
             }
         }
     }
 }
-//private void UpdateIDRoomComboBox(string selectedRClass, string selectedBType)
-//{
-//    // Lọc danh sách phòng dựa trên loại phòng và loại giường đã chọn
-//    var filteredRooms = rooms
-//        .Where(r => r.RCLASS == selectedRClass && r.BTYPE == selectedBType)
-//        .ToList();
-
-//    // Lấy danh sách ID phòng từ danh sách đã lọc
-//    var roomIDs = filteredRooms.Select(r => r.IDRoom).ToList();
-
-//    // Cập nhật Items cho ComboBox
-//    cbbIDRoom.DataSource = roomIDs;
-//}
-
-//private Boolean ValidateInput()
-//{
-//    //Conditions: Empty value
-//    if (txtName.Text == ""
-//        || txtPhone.Text == ""
-//        || txtNationality.Text == ""
-//        || txtAddress.Text == ""
-//        || txtCCCD.Text == ""
-//        || cbbBTYPE.Text == ""
-//        || cbbRCLASS.Text == ""
-//        || cbbIDRoom.Text == ""
-//        || txtPrice.Text == "")
-//    {
-//        MessageBox.Show("Vui lòng không để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-//    //Conditions: Date Checkin
-//    if (DateTime.Compare(dtpCheckIn.Value, DateTime.Now) == -1)
-//    {
-//        MessageBox.Show("lỗi ngày check in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-//    //Conditions: Date Of Birth
-//    int age = (DateTime.Now.Date - dtpBirth.Value.Date).Days;
-//    if (age < (18 * 365.25))
-//    {
-//        MessageBox.Show("Chưa đủ 18 tuổi !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-
-//    //Conditions: Name
-//    bool flag = false; 
-//    foreach (char c in txtName.Text)
-//    {
-//        if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
-//        {
-//            flag = true;
-//            break;
-//        }
-//    }
-//    if (flag)
-//    {
-//        MessageBox.Show("Lỗi Name !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-
-//    //Conditions: Nationality
-//    flag = false;
-//    foreach (char c in txtNationality.Text)
-//    {
-//        if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
-//        {
-//            flag = true;
-//            break;
-//        }
-//    }
-//    if (flag)
-//    {
-//        MessageBox.Show("Lỗi Nationality !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-
-//    //Conditions: Address
-//    flag = false;
-//    foreach (char c in txtAddress.Text)
-//    {
-//        if (!char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c))
-//        {
-//            flag = true;
-//            break;
-//        }
-//    }
-//    if (flag)
-//    {
-//        MessageBox.Show("Lỗi address !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-//    //Conditions: ID Customer
-//    if (!Regex.IsMatch(txtPhone.Text, @"^\d{9,12}$"))
-//    {
-//        MessageBox.Show("Lỗi Phone ID Customer !!!\nCó 9 hoặc 12 số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-//    //Conditions: Phone Number
-//    if (!Regex.IsMatch(txtPhone.Text, @"^\d{10,11}$"))
-//    {
-//        MessageBox.Show("Lỗi Phone Number !!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//        return false;
-//    }
-//    return true;
-//}

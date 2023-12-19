@@ -10,19 +10,19 @@ namespace WindowsFormsApp1
     {
         public string IDRoom { get; set; }
 
-        public string RCLASS { get; set; }
-        public string BTYPE { get; set; }
+        public string RoomClass { get; set; }
+        public string BedType { get; set; }
         public double Price { get; set; }
-        public bool Hired { get; set; }
+        public bool Rent { get; set; }
         
         public CRoom() { }
-        public CRoom(string IDRoom,  string RCLASS, string BTYPE,double Price, bool Hired)
+        public CRoom(string IDRoom,  string RCLASS, string BTYPE,double Price, bool Rent)
         {
             this.IDRoom = IDRoom;
-            this.RCLASS = RCLASS;
-            this.BTYPE = BTYPE;
+            this.RoomClass = RCLASS;
+            this.BedType = BTYPE;
             this.Price = Price;
-            this.Hired = Hired;
+            this.Rent = Rent;
         }
         
         public double GetPrice()

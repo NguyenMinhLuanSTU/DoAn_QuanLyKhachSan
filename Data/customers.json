@@ -1,26 +1,10 @@
 [
   {
-    "CustomerName": "NAm",
+    "CustomerName": "nguyen thanh nam",
     "PhoneNumber": "0123456789",
-    "Nationality": "vn",
-    "DateOfBirth": "1990-01-14T20:52:10",
-    "Address": "hcm",
-    "CCCD": "987654321"
-  },
-  {
-    "CustomerName": "Nguyen nam",
-    "PhoneNumber": "0123456789",
-    "Nationality": "VN",
-    "DateOfBirth": "2000-01-01T20:52:10",
-    "Address": "HCM",
-    "CCCD": "123654987123"
-  },
-  {
-    "CustomerName": "Nguyen",
-    "PhoneNumber": "0366598747",
-    "Nationality": "VN",
-    "DateOfBirth": "2000-11-14T20:52:10",
-    "Address": "HCM",
-    "CCCD": "123456987"
+    "Nationality": "Afghanistan",
+    "DateOfBirth": "2000-12-20T00:00:00",
+    "Address": "TP Hồ Chí Minh",
+    "CCCD": "012345678912"
   }
 ]

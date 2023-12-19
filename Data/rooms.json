@@ -1,114 +1,16 @@
 [
   {
-    "IDRoom": "B456",
-    "RCLASS": "VIP",
-    "BTYPE": "Double",
-    "Price": 7.5,
-    "Hired": true
-  },
-  {
-    "IDRoom": "V214",
-    "RCLASS": "Business Class",
-    "BTYPE": "Triple",
-    "Price": 4.0,
-    "Hired": true
-  },
-  {
-    "IDRoom": "G563",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "R213",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A025",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A026",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A027",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Double",
-    "Price": 1.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A121",
-    "RCLASS": "VIP",
-    "BTYPE": "Single",
-    "Price": 5.0,
-    "Hired": true
-  },
-  {
-    "IDRoom": "A111",
-    "RCLASS": "Business Class",
-    "BTYPE": "Single",
-    "Price": 2.0,
-    "Hired": false
-  },
-  {
-    "IDRoom": "G123",
-    "RCLASS": "Business Class",
-    "BTYPE": "Single",
-    "Price": 2.0,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A324",
-    "RCLASS": "VIP",
-    "BTYPE": "Single",
-    "Price": 5.0,
-    "Hired": false
-  },
-  {
-    "IDRoom": "Y546",
-    "RCLASS": "VIP",
-    "BTYPE": "Double",
-    "Price": 7.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "U812",
-    "RCLASS": "VIP",
-    "BTYPE": "Double",
-    "Price": 7.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A412",
-    "RCLASS": "Business Class",
-    "BTYPE": "Triple",
-    "Price": 4.0,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A883",
-    "RCLASS": "VIP",
-    "BTYPE": "Double",
-    "Price": 7.5,
-    "Hired": false
-  },
-  {
-    "IDRoom": "A133",
-    "RCLASS": "Economy Class",
-    "BTYPE": "Single",
+    "IDRoom": "D243",
+    "RoomClass": "Thương gia",
+    "BedType": "Đôi",
     "Price": 1.0,
-    "Hired": false
+    "Rent": true
+  },
+  {
+    "IDRoom": "D432",
+    "RoomClass": "VIP",
+    "BedType": "Ba",
+    "Price": 5.0,
+    "Rent": false
   }
 ]

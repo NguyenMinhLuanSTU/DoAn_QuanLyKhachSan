@@ -42,14 +42,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dtpCheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNationality = new Guna.UI2.WinForms.Guna2TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbbSex = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +54,7 @@
             this.cbbIDRoom = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             this.cbbAddress = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbNationality = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // btnCheckIn
@@ -78,10 +76,10 @@
             this.btnCheckIn.HoverState.FillColor = System.Drawing.Color.MediumOrchid;
             this.btnCheckIn.HoverState.FillColor2 = System.Drawing.Color.Violet;
             this.btnCheckIn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Location = new System.Drawing.Point(423, 697);
+            this.btnCheckIn.Location = new System.Drawing.Point(407, 615);
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(217, 58);
+            this.btnCheckIn.Size = new System.Drawing.Size(245, 89);
             this.btnCheckIn.TabIndex = 101;
             this.btnCheckIn.Text = "CHECK IN";
             this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
@@ -99,12 +97,13 @@
             this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.txtPrice.ForeColor = System.Drawing.Color.Black;
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(764, 590);
+            this.txtPrice.Location = new System.Drawing.Point(764, 596);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtPrice.PlaceholderText = "";
+            this.txtPrice.ReadOnly = true;
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(261, 39);
             this.txtPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -202,7 +201,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(403, 554);
+            this.label6.Location = new System.Drawing.Point(43, 554);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 23);
             this.label6.TabIndex = 92;
@@ -218,14 +217,14 @@
             this.dtpBirth.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.dtpBirth.ForeColor = System.Drawing.Color.Black;
             this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirth.Location = new System.Drawing.Point(407, 592);
+            this.dtpBirth.Location = new System.Drawing.Point(47, 596);
             this.dtpBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBirth.Name = "dtpBirth";
             this.dtpBirth.Size = new System.Drawing.Size(260, 39);
             this.dtpBirth.TabIndex = 91;
-            this.dtpBirth.Value = new System.DateTime(2023, 11, 14, 20, 52, 10, 605);
+            this.dtpBirth.Value = new System.DateTime(2023, 12, 20, 0, 0, 0, 0);
             // 
             // label8
             // 
@@ -255,7 +254,7 @@
             this.dtpCheckIn.Name = "dtpCheckIn";
             this.dtpCheckIn.Size = new System.Drawing.Size(260, 39);
             this.dtpCheckIn.TabIndex = 89;
-            this.dtpCheckIn.Value = new System.DateTime(2023, 11, 14, 20, 52, 10, 605);
+            this.dtpCheckIn.Value = new System.DateTime(2023, 12, 20, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -268,42 +267,6 @@
             this.label3.Size = new System.Drawing.Size(80, 23);
             this.label3.TabIndex = 87;
             this.label3.Text = "Địa Chỉ:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(45, 554);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 23);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "Giới Tính:";
-            // 
-            // txtNationality
-            // 
-            this.txtNationality.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNationality.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNationality.DefaultText = "";
-            this.txtNationality.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNationality.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNationality.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNationality.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNationality.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNationality.Font = new System.Drawing.Font("Times New Roman", 10.2F);
-            this.txtNationality.ForeColor = System.Drawing.Color.Black;
-            this.txtNationality.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNationality.Location = new System.Drawing.Point(48, 450);
-            this.txtNationality.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtNationality.Name = "txtNationality";
-            this.txtNationality.PasswordChar = '\0';
-            this.txtNationality.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtNationality.PlaceholderText = "Nhập Quốc Tịch";
-            this.txtNationality.SelectedText = "";
-            this.txtNationality.Size = new System.Drawing.Size(261, 39);
-            this.txtNationality.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtNationality.TabIndex = 83;
             // 
             // label14
             // 
@@ -330,12 +293,12 @@
             this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 10.2F);
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhone.Location = new System.Drawing.Point(48, 324);
+            this.txtPhone.Location = new System.Drawing.Point(47, 324);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtPhone.PlaceholderText = "Số điện thoại 10 hoặc 11 số";
+            this.txtPhone.PlaceholderText = "Số điện thoại 10";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(261, 39);
             this.txtPhone.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -388,27 +351,6 @@
             this.label7.Size = new System.Drawing.Size(138, 23);
             this.label7.TabIndex = 85;
             this.label7.Text = "Mã Định Danh:";
-            // 
-            // cbbSex
-            // 
-            this.cbbSex.BackColor = System.Drawing.Color.Transparent;
-            this.cbbSex.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cbbSex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbSex.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbSex.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbSex.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbSex.ForeColor = System.Drawing.Color.Black;
-            this.cbbSex.ItemHeight = 30;
-            this.cbbSex.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cbbSex.Location = new System.Drawing.Point(51, 590);
-            this.cbbSex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbSex.Name = "cbbSex";
-            this.cbbSex.Size = new System.Drawing.Size(259, 36);
-            this.cbbSex.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.cbbSex.TabIndex = 79;
             // 
             // txtName
             // 
@@ -494,18 +436,41 @@
             this.cbbAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbbAddress.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
             this.cbbAddress.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbAddress.DropDownHeight = 150;
             this.cbbAddress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbAddress.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbbAddress.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbAddress.ForeColor = System.Drawing.Color.Black;
+            this.cbbAddress.IntegralHeight = false;
             this.cbbAddress.ItemHeight = 30;
             this.cbbAddress.Location = new System.Drawing.Point(405, 324);
             this.cbbAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbAddress.Name = "cbbAddress";
-            this.cbbAddress.Size = new System.Drawing.Size(261, 36);
+            this.cbbAddress.Size = new System.Drawing.Size(260, 36);
             this.cbbAddress.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbAddress.TabIndex = 102;
+            // 
+            // cbbNationality
+            // 
+            this.cbbNationality.BackColor = System.Drawing.Color.Transparent;
+            this.cbbNationality.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbbNationality.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            this.cbbNationality.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbNationality.DropDownHeight = 150;
+            this.cbbNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbNationality.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNationality.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbNationality.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbNationality.ForeColor = System.Drawing.Color.Black;
+            this.cbbNationality.IntegralHeight = false;
+            this.cbbNationality.ItemHeight = 30;
+            this.cbbNationality.Location = new System.Drawing.Point(47, 450);
+            this.cbbNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbNationality.Name = "cbbNationality";
+            this.cbbNationality.Size = new System.Drawing.Size(260, 36);
+            this.cbbNationality.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbbNationality.TabIndex = 103;
             // 
             // UC_BookRoom
             // 
@@ -513,6 +478,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.cbbNationality);
             this.Controls.Add(this.cbbAddress);
             this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.txtPrice);
@@ -528,14 +494,11 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtpCheckIn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtNationality);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCCCD);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbbSex);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -564,14 +527,11 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpCheckIn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtNationality;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2TextBox txtPhone;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbSex;
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -579,5 +539,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbIDRoom;
         private Guna.Charts.WinForms.GunaAreaDataset gunaAreaDataset1;
         private Guna.UI2.WinForms.Guna2ComboBox cbbAddress;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbNationality;
     }
 }

@@ -1,47 +1,17 @@
 [
   {
     "customer": {
-      "CustomerName": "NAm",
+      "CustomerName": "nguyen thanh nam",
       "PhoneNumber": "0123456789",
-      "Nationality": "vn",
-      "DateOfBirth": "1990-01-14T20:52:10",
-      "Address": "hcm",
-      "CCCD": "987654321"
+      "Nationality": "Afghanistan",
+      "DateOfBirth": "2000-12-20T00:00:00",
+      "Address": "TP Hồ Chí Minh",
+      "CCCD": "012345678912"
     },
-    "CheckIn": "2023-12-07T20:52:10",
+    "CheckIn": "2023-12-21T00:00:00",
     "CheckOut": null,
     "pay": 0.0,
-    "IdRoom": "A121",
-    "price": 5.0
-  },
-  {
-    "customer": {
-      "CustomerName": "Nguyen nam",
-      "PhoneNumber": "0123456789",
-      "Nationality": "VN",
-      "DateOfBirth": "2000-01-01T20:52:10",
-      "Address": "HCM",
-      "CCCD": "123654987123"
-    },
-    "CheckIn": "2023-12-07T20:52:10",
-    "CheckOut": null,
-    "pay": 0.0,
-    "IdRoom": "V214",
-    "price": 4.0
-  },
-  {
-    "customer": {
-      "CustomerName": "Nguyen",
-      "PhoneNumber": "0366598747", 
-      "Nationality": "VN",
-      "DateOfBirth": "2000-11-14T20:52:10",
-      "Address": "HCM",
-      "CCCD": "123456987"
-    },
-    "CheckIn": "2023-12-08T20:52:10",
-    "CheckOut": null,
-    "pay": 0.0,
-    "IdRoom": "B456",
-    "price": 7.5
+    "IdRoom": "D243",
+    "price": 1.0
   }
 ]

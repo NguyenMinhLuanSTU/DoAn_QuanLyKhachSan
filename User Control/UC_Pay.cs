@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
 using WindowsFormsApp1.Data;
 using WindowsFormsApp1.frm;
@@ -55,7 +50,7 @@ namespace WindowsFormsApp1.User_Control
             {
                 if (r.IDRoom == IDRoom)
                 {
-                    r.Hired = false;
+                    r.Rent = false;
                     return;
                 }
             }

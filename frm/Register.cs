@@ -17,6 +17,13 @@ namespace WindowsFormsApp1
         public Register()
         {
             InitializeComponent();
+
+            guna2DragControl1.SetDrag(pnlMainLeft);
+            guna2DragControl1.SetDrag(picbwelcom);
+            guna2DragControl1.SetDrag(picbwelcom2);
+            guna2DragControl1.SetDrag(label1);
+            guna2DragControl1.SetDrag(label2);
+            guna2DragControl1.SetDrag(label3);
         }
 
         public static List<CUser> users;

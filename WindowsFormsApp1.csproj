@@ -90,7 +90,6 @@
     <Compile Include="class\CCustomer.cs" />
     <Compile Include="class\CRoom.cs" />
     <Compile Include="class\CUser.cs" />
-    <Compile Include="class\Processing.cs" />
     <Compile Include="Data\FileControl.cs" />
     <Compile Include="frm\Bill.cs">
       <SubType>Form</SubType>
@@ -129,12 +128,6 @@
     </Compile>
     <Compile Include="User Control\UC_BookRoom.Designer.cs">
       <DependentUpon>UC_BookRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Control\UC_CustomerDetail.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control\UC_CustomerDetail.Designer.cs">
-      <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UC_Home.cs">
       <SubType>UserControl</SubType>
@@ -176,16 +169,14 @@
     <EmbeddedResource Include="User Control\UC_BookRoom.resx">
       <DependentUpon>UC_BookRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\UC_CustomerDetail.resx">
-      <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UC_Pay.resx">
       <DependentUpon>UC_Pay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\province.json" />
+    <None Include="Data\196countries.json" />
+    <None Include="Data\63province.json" />
     <None Include="Data\checks.json" />
     <None Include="Data\customers.json" />
     <None Include="Data\rooms.json" />

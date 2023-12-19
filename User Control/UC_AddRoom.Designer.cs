@@ -46,11 +46,11 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cRoomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cRoomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cRoomBindingSource1)).BeginInit();
@@ -148,9 +148,9 @@
             this.cbbBTYPE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbBTYPE.ItemHeight = 30;
             this.cbbBTYPE.Items.AddRange(new object[] {
-            "Single",
-            "Double",
-            "Triple"});
+            "Đơn",
+            "Đôi",
+            "Ba"});
             this.cbbBTYPE.Location = new System.Drawing.Point(439, 145);
             this.cbbBTYPE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbBTYPE.Name = "cbbBTYPE";
@@ -182,8 +182,8 @@
             this.cbbRCLASS.ItemHeight = 30;
             this.cbbRCLASS.Items.AddRange(new object[] {
             "VIP",
-            "Business Class",
-            "Economy Class"});
+            "Thương gia",
+            "Bình dân"});
             this.cbbRCLASS.Location = new System.Drawing.Point(164, 145);
             this.cbbRCLASS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbRCLASS.Name = "cbbRCLASS";
@@ -211,11 +211,11 @@
             this.dgvAddRoom.ColumnHeadersHeight = 24;
             this.dgvAddRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvAddRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.IDRoom,
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Hired});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,7 +255,6 @@
             this.dgvAddRoom.ThemeStyle.RowsStyle.Height = 24;
             this.dgvAddRoom.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAddRoom.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvAddRoom.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAddRoom_CellFormatting);
             // 
             // label1
             // 
@@ -325,18 +324,19 @@
             // 
             this.cRoomBindingSource1.DataSource = typeof(WindowsFormsApp1.CRoom);
             // 
-            // Column1
+            // IDRoom
             // 
-            this.Column1.DataPropertyName = "IDRoom";
-            this.Column1.FillWeight = 72.1925F;
-            this.Column1.HeaderText = "Mã Phòng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.IDRoom.DataPropertyName = "IDRoom";
+            this.IDRoom.FillWeight = 72.1925F;
+            this.IDRoom.HeaderText = "Mã Phòng";
+            this.IDRoom.MinimumWidth = 6;
+            this.IDRoom.Name = "IDRoom";
+            this.IDRoom.ReadOnly = true;
+            this.IDRoom.ToolTipText = "Mã Phòng";
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "RCLASS";
+            this.Column2.DataPropertyName = "RoomClass";
             this.Column2.FillWeight = 142.7186F;
             this.Column2.HeaderText = "Loại Phòng";
             this.Column2.MinimumWidth = 6;
@@ -346,7 +346,7 @@
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "BTYPE";
+            this.Column3.DataPropertyName = "BedType";
             this.Column3.FillWeight = 79.3813F;
             this.Column3.HeaderText = "Loại Giường";
             this.Column3.MinimumWidth = 6;
@@ -364,14 +364,14 @@
             this.Column4.ReadOnly = true;
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Column5
+            // Rent
             // 
-            this.Column5.DataPropertyName = "Hired";
-            this.Column5.FillWeight = 76.86145F;
-            this.Column5.HeaderText = "Trạng Thái";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.Hired.DataPropertyName = "Rent";
+            this.Hired.FillWeight = 76.86145F;
+            this.Hired.HeaderText = "Trạng Thái";
+            this.Hired.MinimumWidth = 6;
+            this.Hired.Name = "Rent";
+            this.Hired.ReadOnly = true;
             // 
             // uc_AddRoom
             // 
@@ -418,10 +418,10 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
         private System.Windows.Forms.BindingSource cRoomBindingSource;
         private System.Windows.Forms.BindingSource cRoomBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hired;
     }
 }
