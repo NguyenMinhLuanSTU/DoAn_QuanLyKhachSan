@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.User_Control
 
 
             //Conditions: Date Checkin
-            if (DateTime.Compare(dtpCheckIn.Value, DateTime.Now) == -1)
+            if (DateTime.Compare(dtpCheckIn.Value.Date, DateTime.Now.Date) == -1)
             {
                 MessageBox.Show("Lỗi ngày check in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

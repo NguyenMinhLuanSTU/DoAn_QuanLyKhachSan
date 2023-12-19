@@ -61,11 +61,8 @@ namespace WindowsFormsApp1.frm
             if (result == DialogResult.Yes)
             {
                 DialogResult = DialogResult.Yes;
+
                 MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK);
-                //Thay đổi dũ liệu bên form pay
-
-
-
 
                 this.Close();
             }

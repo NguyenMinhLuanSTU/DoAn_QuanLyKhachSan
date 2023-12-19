@@ -20,9 +20,9 @@ namespace WindowsFormsApp1.User_Control
         {
             //luôn cập nhật giá trị cho price
             double money = 1.0;
-            if (cbbBTYPE.Text == "Double") money *= 1.5;
-            if (cbbBTYPE.Text == "Triple") money *= 2;
-            if (cbbRCLASS.Text == "Business Class") money *= 2;
+            if (cbbBTYPE.Text == "Đôi") money *= 1.5;
+            if (cbbBTYPE.Text == "Ba") money *= 2;
+            if (cbbRCLASS.Text == "Thương gia") money *= 2;
             if (cbbRCLASS.Text == "VIP") money *= 5;
             txtPrice.Text = money.ToString();
         }

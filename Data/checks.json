@@ -9,8 +9,23 @@
       "CCCD": "012345678912"
     },
     "CheckIn": "2023-12-21T00:00:00",
-    "CheckOut": null,
-    "pay": 0.0,
+    "CheckOut": "2023-12-29T19:49:35",
+    "pay": 9.0,
+    "IdRoom": "D243",
+    "price": 1.0
+  },
+  {
+    "customer": {
+      "CustomerName": "nguywn",
+      "PhoneNumber": "9547862143",
+      "Nationality": "Vietnam",
+      "DateOfBirth": "2000-12-20T00:00:00",
+      "Address": "TP Hồ Chí Minh",
+      "CCCD": "978456132132"
+    },
+    "CheckIn": "2023-12-21T00:00:00",
+    "CheckOut": "2023-12-29T19:49:35",
+    "pay": 9.0,
     "IdRoom": "D243",
     "price": 1.0
   }

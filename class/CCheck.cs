@@ -34,7 +34,8 @@ namespace WindowsFormsApp1
         {
             if (CheckOut.HasValue)
             {
-                pay = (double)(CheckOut.Value.Day - CheckIn.Day) * price;
+                TimeSpan duration = CheckOut.Value.Date - CheckIn.Date;
+                pay = (duration.Days + 1) * price;
                 return pay;
             }
 

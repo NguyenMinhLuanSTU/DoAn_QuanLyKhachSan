@@ -23,14 +23,9 @@ namespace WindowsFormsApp1.User_Control
             rooms = FileControl<CRoom>.Read("rooms.json");
             dgvUpdate();
         }
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            checks = FileControl<CCheck>.Read("checks.json");
-        }
-
+       
         private bool Condition()
         {
-            //Conditions: Date Checkin
             if (DateTime.Compare(dtpCheckOut.Value.Date, DateTime.Now.Date) == -1 || DateTime.Compare(dtpCheckOut.Value.Date, DateTime.Now.Date) == -1)
             {
                 MessageBox.Show("Lỗi ngày check in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,35 +49,42 @@ namespace WindowsFormsApp1.User_Control
                     return;
                 }
             }
-            FileControl<CRoom>.Write(rooms, "rooms.json");
-
+        }
+        private void Updatecheck(string IDRoom)
+        {
+            foreach (CCheck c in checks)
+            {
+                if (c.IdRoom == IDRoom && c.CheckOut == null)
+                {
+                    c.SetCheckOut(dtpCheckOut.Value);
+                    c.pay = c.CheckPay();
+                    return;
+                }
+            }
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
-            //if (dgvPay.SelectedRows.Count > 0)
-            //{
-            //    int row = dgvPay.SelectedRows[0].Index;
-            //    //Bill bill = new Bill();
-            //    //bill.Show();
-            //    UpdateRoom((string)dgvPay.Rows[row].Cells["Column1"].Value);
-            //    dgvUpdate();
-            //    FileControl<CCheck>.Write(checks, "checks.json");
-            //}
-
             if (dgvPay.SelectedRows.Count > 0)
             {
-                string idRoom = dgvPay.SelectedRows[0].Cells[4].Value.ToString();
-                CCheck rs = checks.Find(c => c.IdRoom == idRoom);
-                int row = dgvPay.SelectedRows[0].Index;
-
-                rs.SetCheckOut(dtpCheckOut.Value);//Dua gia tri checkout vo
-                                                  //Truyen thang dang chon vo form
-                Bill b = new Bill(rs);
-
-                if (b.ShowDialog() == DialogResult.Yes)
+                if (Condition())
                 {
-                    UpdateRoom((string)dgvPay.Rows[row].Cells["Column1"].Value);
-                    //FileControl<CCheck>.Write(checks, "checks.json");
+                    string idRoom = dgvPay.SelectedRows[0].Cells[4].Value.ToString();
+                    CCheck rs = checks.Find(c => c.IdRoom == idRoom);
+                    int row = dgvPay.SelectedRows[0].Index;
+
+                    rs.SetCheckOut(dtpCheckOut.Value);
+                    Bill b = new Bill(rs);
+
+                    if (b.ShowDialog() == DialogResult.Yes)
+                    {
+                        UpdateRoom(rs.IdRoom);
+
+                        Updatecheck(rs.IdRoom);
+
+                        FileControl<CCheck>.Write(checks, "checks.json");
+                        FileControl<CRoom>.Write(rooms, "rooms.json");
+                        dgvUpdate();
+                    }
                 }
             }
             else

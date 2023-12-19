@@ -29,23 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPay = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtIDRoom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPay = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dtpCheckOut = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +66,7 @@
             this.btnPay.HoverState.FillColor = System.Drawing.Color.MediumOrchid;
             this.btnPay.HoverState.FillColor2 = System.Drawing.Color.Violet;
             this.btnPay.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(789, 646);
+            this.btnPay.Location = new System.Drawing.Point(452, 637);
             this.btnPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(179, 58);
@@ -80,46 +78,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(444, 626);
+            this.label8.Location = new System.Drawing.Point(126, 617);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(158, 23);
             this.label8.TabIndex = 86;
             this.label8.Text = "Ngày Thanh Toán";
-            // 
-            // txtIDRoom
-            // 
-            this.txtIDRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtIDRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIDRoom.DefaultText = "";
-            this.txtIDRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIDRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIDRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIDRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIDRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDRoom.Font = new System.Drawing.Font("Times New Roman", 10.2F);
-            this.txtIDRoom.ForeColor = System.Drawing.Color.Gray;
-            this.txtIDRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDRoom.Location = new System.Drawing.Point(139, 665);
-            this.txtIDRoom.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtIDRoom.Name = "txtIDRoom";
-            this.txtIDRoom.PasswordChar = '\0';
-            this.txtIDRoom.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtIDRoom.PlaceholderText = "[A000]";
-            this.txtIDRoom.ReadOnly = true;
-            this.txtIDRoom.SelectedText = "";
-            this.txtIDRoom.Size = new System.Drawing.Size(191, 39);
-            this.txtIDRoom.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtIDRoom.TabIndex = 84;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(135, 628);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 23);
-            this.label4.TabIndex = 83;
-            this.label4.Text = "Mã Phòng:";
             // 
             // label1
             // 
@@ -136,17 +99,17 @@
             this.dgvPay.AllowUserToAddRows = false;
             this.dgvPay.AllowUserToDeleteRows = false;
             this.dgvPay.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvPay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPay.ColumnHeadersHeight = 25;
             this.dgvPay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvPay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -156,14 +119,14 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPay.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPay.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPay.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPay.Location = new System.Drawing.Point(56, 177);
             this.dgvPay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -210,7 +173,7 @@
             this.dtpCheckOut.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.dtpCheckOut.ForeColor = System.Drawing.Color.Black;
             this.dtpCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCheckOut.Location = new System.Drawing.Point(448, 665);
+            this.dtpCheckOut.Location = new System.Drawing.Point(130, 656);
             this.dtpCheckOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpCheckOut.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpCheckOut.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -218,6 +181,48 @@
             this.dtpCheckOut.Size = new System.Drawing.Size(191, 39);
             this.dtpCheckOut.TabIndex = 92;
             this.dtpCheckOut.Value = new System.DateTime(2023, 12, 13, 19, 49, 35, 0);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "IdRoom";
+            this.Column1.HeaderText = "Mã phòng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "customer.CustomerName";
+            this.Column6.HeaderText = "Khách hàng";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CheckIn";
+            this.Column2.HeaderText = "Ngày thuê";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "price";
+            this.Column3.HeaderText = "Đơn giá";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CheckOut";
+            this.Column4.HeaderText = "Ngày trả";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
             // 
             // Column5
             // 
@@ -228,46 +233,6 @@
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CheckOut";
-            this.Column4.HeaderText = "Ngày trả";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "price";
-            this.Column3.HeaderText = "Đơn giá";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "CheckIn";
-            this.Column2.HeaderText = "Ngày thuê";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "customer.CustomerName";
-            this.Column6.HeaderText = "Khách hàng";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "IdRoom";
-            this.Column1.HeaderText = "Mã phòng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // UC_Pay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,8 +242,6 @@
             this.Controls.Add(this.dgvPay);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtIDRoom);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Pay";
@@ -293,8 +256,6 @@
 
         private Guna.UI2.WinForms.Guna2GradientButton btnPay;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtIDRoom;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPay;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;

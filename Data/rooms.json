@@ -1,10 +1,24 @@
 [
   {
+    "IDRoom": "D123",
+    "RoomClass": "Thương gia",
+    "BedType": "Ba",
+    "Price": 1.0,
+    "Rent": false
+  },
+  {
     "IDRoom": "D243",
     "RoomClass": "Thương gia",
     "BedType": "Đôi",
     "Price": 1.0,
-    "Rent": true
+    "Rent": false
+  },
+  {
+    "IDRoom": "D343",
+    "RoomClass": "Bình dân",
+    "BedType": "Đơn",
+    "Price": 1.0,
+    "Rent": false
   },
   {
     "IDRoom": "D432",
