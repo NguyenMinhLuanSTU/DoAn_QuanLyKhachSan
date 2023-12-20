@@ -1,3 +1,65 @@
 [
- 
+  {
+    "IDRoom": "A001",
+    "RoomClass": "VIP",
+    "BedType": "Đơn",
+    "Price": 5.0,
+    "Rent": false
+  },
+  {
+    "IDRoom": "A002",
+    "RoomClass": "VIP",
+    "BedType": "Ba",
+    "Price": 10.0,
+    "Rent": false
+  },
+  {
+    "IDRoom": "A234",
+    "RoomClass": "Thương gia",
+    "BedType": "Đơn",
+    "Price": 2.0,
+    "Rent": false
+  },
+  {
+    "IDRoom": "A235",
+    "RoomClass": "VIP",
+    "BedType": "Đơn",
+    "Price": 5.0,
+    "Rent": false
+  },
+  {
+    "IDRoom": "A431",
+    "RoomClass": "Bình dân",
+    "BedType": "Đôi",
+    "Price": 1.5,
+    "Rent": false
+  },
+  {
+    "IDRoom": "A456",
+    "RoomClass": "Thương gia",
+    "BedType": "Đôi",
+    "Price": 3.0,
+    "Rent": false
+  },
+  {
+    "IDRoom": "A534",
+    "RoomClass": "Bình dân",
+    "BedType": "Đôi",
+    "Price": 1.5,
+    "Rent": false
+  },
+  {
+    "IDRoom": "C343",
+    "RoomClass": "VIP",
+    "BedType": "Ba",
+    "Price": 10.0,
+    "Rent": false
+  },
+  {
+    "IDRoom": "C453",
+    "RoomClass": "VIP",
+    "BedType": "Đôi",
+    "Price": 7.5,
+    "Rent": false
+  }
 ]

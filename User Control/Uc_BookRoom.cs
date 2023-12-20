@@ -235,8 +235,8 @@ namespace WindowsFormsApp1.User_Control
             customers = FileControl<CCustomer>.Read("customers.json");
             checks = FileControl<CCheck>.Read("checks.json");
             rooms = FileControl<CRoom>.Read("rooms.json");
-            province = FileControl<string>.Read("63province.json");
-            countries = FileControl<string>.Read("196countries.json");
+            province = FileControl<string>.Read("province.json");
+            countries = FileControl<string>.Read("countries.json");
             dtpBirth.Value = DateTime.Now.Date;
             dtpCheckIn.Value = DateTime.Now.Date;
             UpdateComboBoxItems();

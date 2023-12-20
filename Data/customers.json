@@ -1,3 +1,10 @@
 [
-  
+  {
+    "CustomerName": "Nguyễn Thanh A",
+    "PhoneNumber": "0965426813",
+    "Nationality": "Vietnam",
+    "DateOfBirth": "2000-12-20T00:00:00",
+    "Address": "TP Hồ Chí Minh",
+    "CCCD": "621479864246"
+  }
 ]
